@@ -31,6 +31,11 @@ public:
     void findAndPrintMultimedia(const std::string &name) const;
 
     void findAndPrintGroup(const std::string& groupName) const;
+
+    void findAndPlayMultimedia(const std::string &name) const;
+
+
+    
 };
 
 #endif

@@ -78,3 +78,17 @@ void MultimediaManager::
         std::cout << "Multimedia object with name " << groupName << " not found." << std::endl;
     }
 }
+
+//Fonction pour afficher et jouer un object multimédia par son nom
+void MultimediaManager::findAndPlayMultimedia(const std::string &name) const{
+    auto it = multimediaTable.find(name);
+    if (it != multimediaTable.end())
+    {
+        std::shared_ptr<Multimedia> multimedia = it->second;
+        multimedia->play();
+    }
+    else
+    {
+        std::cout << "Multimedia object with name " << name << " not found." << std::endl;
+    }
+}
