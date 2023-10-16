@@ -26,3 +26,4 @@ A faire, s'aider du cours
 
 //9
 Dans main , créer des types pour les smart pointers pour plus de visibilité# Media-Manager-app
+UNIFORMISER LA LANGUE DES COMMENTAIRES

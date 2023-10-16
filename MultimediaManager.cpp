@@ -1,16 +1,15 @@
 #include "MultimediaManager.h"
 
 MultimediaManager::MultimediaManager(const std::map<std::string, std::shared_ptr<Multimedia>> &initialMultimedia,
-                                     const std::map<std::string, Group> &initialGroups)
+                                     const std::map<std::string, std::shared_ptr<Group>> &initialGroups)
 {
     multimediaTable = initialMultimedia;
     groupTable = initialGroups;
 }
 
 // Function to create a Video object and add it to multimediaTable
-MultimediaManager::
-    std::shared_ptr<Video>
-    createVideo(int duration, const std::string &name, const std::string &fileName)
+std::shared_ptr<Video>
+MultimediaManager::createVideo(int duration, const std::string &name, const std::string &fileName)
 {
     std::shared_ptr<Video> video = std::make_shared<Video>(duration, name, fileName);
     multimediaTable[name] = video;
@@ -18,9 +17,8 @@ MultimediaManager::
 }
 
 // Function to create a Photo object and add it to multimediaTable
-MultimediaManager::
-    std::shared_ptr<Photo>
-    createPhoto(float latitude, float longitude, std::string name, std::string fileName)
+std::shared_ptr<Photo>
+MultimediaManager::createPhoto(float latitude, float longitude, std::string name, std::string fileName)
 {
     std::shared_ptr<Photo> photo = std::make_shared<Photo>(latitude, longitude, name, fileName);
     multimediaTable[name] = photo;
@@ -28,8 +26,8 @@ MultimediaManager::
 }
 
 // Function to create a Film object and add it to multimediaTable
+std::shared_ptr<Film>
 MultimediaManager::
-    std::shared_ptr<Film>
     createFilm(int *array, int nb, int duration, std::string name, std::string fileName)
 {
     std::shared_ptr<Film> film = std::make_shared<Film>(array, nb, duration, name, fileName);
@@ -38,11 +36,45 @@ MultimediaManager::
 }
 
 // Function to create a Group object and add it to groupTable
+std::shared_ptr<Group>
 MultimediaManager::
-    std::shared_ptr<Group>
     createGroup(std::string groupName, const std::list<std::shared_ptr<Multimedia>> &sourceList)
 {
     std::shared_ptr<Group> group = std::make_shared<Group>(groupName, sourceList);
     groupTable[groupName] = group;
     return group;
+}
+
+// Fonction pour rechercher et afficher un objet multimédia par son nom
+void MultimediaManager::
+    findAndPrintMultimedia(const std::string &name) const
+{
+    auto it = multimediaTable.find(name);
+    if (it != multimediaTable.end())
+    {
+        std::shared_ptr<Multimedia> multimedia = it->second;
+        multimedia->print(std::cout);
+    }
+    else
+    {
+        std::cout << "Multimedia object with name " << name << " not found." << std::endl;
+    }
+}
+
+// Fonction pour rechercher et afficher un groupe par son nom
+void MultimediaManager::
+    findAndPrintGroup(const std::string &groupName) const
+{
+    auto it = groupTable.find(groupName);
+    if (it != groupTable.end())
+    {
+        std::shared_ptr<Group> group = it->second;
+        std::cout << "Group Name: " << groupName << std::endl;
+        std::cout << "Contents of the Group:" << std::endl;
+        group->print(std::cout);
+    }
+    else
+    {
+        std::cout << "Multimedia object with name " << groupName << " not found." << std::endl;
+    }
 }
