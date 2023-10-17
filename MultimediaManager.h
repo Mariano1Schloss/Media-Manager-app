@@ -30,12 +30,15 @@ public:
 
     void findAndPrintMultimedia(const std::string &name) const;
 
-    void findAndPrintGroup(const std::string& groupName) const;
+    void findAndPrintGroup(const std::string &groupName) const;
 
     void findAndPlayMultimedia(const std::string &name) const;
 
+    void deleteMultimedia(const std::string &multimediaName);
 
-    
+    void deleteGroup(const std::string &groupName);
+
+    void removeFromAllGroups(const std::string &multimediaName);
 };
 
 #endif

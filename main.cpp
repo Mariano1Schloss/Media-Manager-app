@@ -2,6 +2,7 @@
 // main.cpp
 // Created on 21/10/2018
 //
+#ifdef MAIN
 #include "Photo.h"
 #include "Video.h"
 #include "Film.h"
@@ -58,18 +59,7 @@ int main(int argc, const char *argv[])
     f2.print(std::cout);*/
 
     // prints question 8
-
-    // VideoPtr video = new Video(5, "test", "/mnt/c/Users/mathi/Videos/VID_20220314_150046.mp4");
-    /*VideoPtr video = std::make_shared<Video>(5, "test", "/mnt/c/Users/mathi/Videos/VID_20220314_150046.mp4");
-    int array[] = {1, 2, 3};
-    Film *f2 = new Film(array, 3, 6, "first film", "./mvie.mp4");
-    // PhotoPtr photo = new Photo(1, 1, "photo 1", "/");
-    PhotoPtr photo = std::make_shared<Photo>(1, 1, "photo 1", "/");
-    std::list<Multimedia *> list1 = {video, f2, photo};
-    std::list<Multimedia *> list2 = {video, f2, photo};
-    Group *group1 = new Group("group 1", list1);
-    Group *group2 = new Group("group 2", list2);*/
-
+/*
     // Create Video objects
     std::shared_ptr<Multimedia> video1 = std::make_shared<Video>(5, "Video 1", ".");
     std::shared_ptr<Multimedia> video2 = std::make_shared<Video>(6, "Video 2", ".");
@@ -89,6 +79,8 @@ int main(int argc, const char *argv[])
     group1->print(std::cout);
     delete group1;
     group2->print(std::cout);
-    group2->pop_front();
+    group2->pop_front();*/
+
     return 0;
 };
+#endif

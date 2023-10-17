@@ -27,3 +27,10 @@ A faire, s'aider du cours
 //9
 Dans main , créer des types pour les smart pointers pour plus de visibilité# Media-Manager-app
 UNIFORMISER LA LANGUE DES COMMENTAIRES
+
+//10
+Réponse à la question : rendre le constructeur de Multimedia privé et déclarer la classe MultimediaManager comme ami
+
+A voir : est ce nécessaire de passer toujours les variables par référence dans les signatures de fonction
+
+TESTER LA CLASSE

@@ -10,10 +10,12 @@ private:
     std::string name;
     std::string fileName;
 
-public:
+protected:
     Multimedia(std::string name, std::string filename);
-
     Multimedia();
+
+public:
+    friend class MultimediaManager;
 
     virtual ~Multimedia();
 

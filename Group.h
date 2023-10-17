@@ -29,5 +29,22 @@ public:
             media->print(s);
         }
     }
+    
+    //Méthode pour vérifier si un groupe contient un objet multimédia par son nom et le retire de la liste le cas échéant
+    void removeMultimediaByName(const std::string &multimediaName)
+    {
+        auto it = begin();
+        while (it != end())
+        {
+            if ((*it)->getName() == multimediaName)
+            {
+                it = erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+    }
 };
 #endif

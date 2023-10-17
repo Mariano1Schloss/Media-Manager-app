@@ -79,8 +79,9 @@ void MultimediaManager::
     }
 }
 
-//Fonction pour afficher et jouer un object multimédia par son nom
-void MultimediaManager::findAndPlayMultimedia(const std::string &name) const{
+// Fonction pour afficher et jouer un object multimédia par son nom
+void MultimediaManager::findAndPlayMultimedia(const std::string &name) const
+{
     auto it = multimediaTable.find(name);
     if (it != multimediaTable.end())
     {
@@ -90,5 +91,39 @@ void MultimediaManager::findAndPlayMultimedia(const std::string &name) const{
     else
     {
         std::cout << "Multimedia object with name " << name << " not found." << std::endl;
+    }
+}
+
+// Méthode pour supprimer un objet multimédia par son nom
+void MultimediaManager::deleteMultimedia(const std::string &multimediaName)
+{
+    auto it = multimediaTable.find(multimediaName);
+    if (it != multimediaTable.end())
+    {
+        // Retirer l'objet multimédia de tous les groupes
+        removeFromAllGroups(multimediaName);
+        // Supprimer l'objet multimédia de la table
+        multimediaTable.erase(it);
+    }
+}
+
+// Méthode pour supprimer un groupe par son nom
+void MultimediaManager::deleteGroup(const std::string &groupName)
+{
+    auto it = groupTable.find(groupName);
+    if (it != groupTable.end())
+    {
+        // Supprimer le groupe de la table
+        groupTable.erase(it);
+    }
+}
+
+
+// Méthode pour retirer un objet multimédia des groupes qui le contiennent
+void MultimediaManager::removeFromAllGroups(const std::string &multimediaName)
+{
+    for (auto &group : groupTable)
+    {
+        group.second->removeMultimediaByName(multimediaName);
     }
 }
