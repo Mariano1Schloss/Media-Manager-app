@@ -30,7 +30,13 @@ UNIFORMISER LA LANGUE DES COMMENTAIRES
 
 //10
 Réponse à la question : rendre le constructeur de Multimedia privé et déclarer la classe MultimediaManager comme ami
+Faut -il déclarer tous les constructeurs hérédités comme privés aussi?
 
 A voir : est ce nécessaire de passer toujours les variables par référence dans les signatures de fonction
 
 TESTER LA CLASSE
+
+//11
+Gérer la gestion d'erreur dans la recherche de fichier ??
+PAreil avant de play le fichier dans le cas où aucun fichier n'est trouvé
+PAreil dans la suppression

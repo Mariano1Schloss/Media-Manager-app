@@ -47,13 +47,13 @@ MultimediaManager::
 
 // Fonction pour rechercher et afficher un objet multimédia par son nom
 void MultimediaManager::
-    findAndPrintMultimedia(const std::string &name) const
+    findAndPrintMultimedia(const std::string &name, std::ostream &s) const
 {
     auto it = multimediaTable.find(name);
     if (it != multimediaTable.end())
     {
         std::shared_ptr<Multimedia> multimedia = it->second;
-        multimedia->print(std::cout);
+        multimedia->print(s);
     }
     else
     {
@@ -63,7 +63,7 @@ void MultimediaManager::
 
 // Fonction pour rechercher et afficher un groupe par son nom
 void MultimediaManager::
-    findAndPrintGroup(const std::string &groupName) const
+    findAndPrintGroup(const std::string &groupName, std::ostream &s) const
 {
     auto it = groupTable.find(groupName);
     if (it != groupTable.end())
@@ -71,7 +71,7 @@ void MultimediaManager::
         std::shared_ptr<Group> group = it->second;
         std::cout << "Group Name: " << groupName << std::endl;
         std::cout << "Contents of the Group:" << std::endl;
-        group->print(std::cout);
+        group->print(s);
     }
     else
     {
@@ -118,7 +118,6 @@ void MultimediaManager::deleteGroup(const std::string &groupName)
     }
 }
 
-
 // Méthode pour retirer un objet multimédia des groupes qui le contiennent
 void MultimediaManager::removeFromAllGroups(const std::string &multimediaName)
 {
@@ -126,4 +125,46 @@ void MultimediaManager::removeFromAllGroups(const std::string &multimediaName)
     {
         group.second->removeMultimediaByName(multimediaName);
     }
+}
+
+// Method that find media names that start with a given char sequence
+std::list<std::string> MultimediaManager::findMediaStartingWithCharSeq(const std::string &charSeq) const
+{
+    std::list<std::string> matchingNames;
+    for (const auto &pair : multimediaTable)
+    {
+        const std::string &name = pair.first;
+        if (name.find(charSeq) == 0)
+        {
+            matchingNames.push_back(name);
+        }
+    }
+    return matchingNames;
+}
+
+// Method that find media names containing a given char sequence
+std::list<std::string> MultimediaManager::findMediaContainingCharSeq(const std::string &charSeq) const
+{
+    std::list<std::string> matchingNames;
+    for (const auto &pair : multimediaTable)
+    {
+        const std::string &name = pair.first;
+        if (name.find(charSeq) != std::string::npos)
+        {
+            matchingNames.push_back(name);
+        }
+    }
+    return matchingNames;
+}
+
+
+// returns all media names from the map in a list
+std::list<std::string> MultimediaManager::findAllMedia() const
+{
+    std::list<std::string> allNames;
+    for (const auto &pair : multimediaTable)
+    {
+        allNames.push_back(pair.first);
+    }
+    return allNames;
 }
