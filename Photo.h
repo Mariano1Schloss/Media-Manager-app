@@ -8,11 +8,12 @@ private:
     float latitude;
     float longitude;
 
-public:
+protected:
     Photo(float latitude, float longitude, std::string name, std::string fileName) : Multimedia(name, fileName), latitude{latitude}, longitude{longitude} {}
-
     Photo() : Multimedia(), latitude{0}, longitude{0} {}
 
+public:
+    friend class MultimediaManager;
     // Getter for latitude
     float getLatitude() const { return latitude; }
 
@@ -43,24 +44,37 @@ public:
     std::string getClassName() override { return std::string("Photo"); }
 
     // Write object attributes and class name into a file
-    void write(std::ostream &f) override
+    void write(std::ofstream &f) override
     {
-        Multimedia::write(f);
-        f << getClassName() << '\n'
-          << latitude << '\n'
-          << longitude << '\n';
+        if (f.is_open())
+        {
+            Multimedia::write(f);
+            f << latitude << '\n'
+              << longitude << '\n';
+        }
+        else
+        {
+            std::cerr << "Erreur : Impossible d'ouvrir le fichier en écriture." << std::endl;
+        }
     }
 
     // read objects attributes from a file
-    void read(std::istream &f) override
+    void read(std::ifstream &f) override
     {
-        Multimedia::read(f);
-        std::string lat, longi;
-        getline(f, lat);
-        getline(f, longi);
-        // TODO GESTION d'ERREUR
-        latitude = std::stol(lat);
-        longitude = std::stol(longi);
-    };
+        if (f.is_open())
+        {
+            Multimedia::read(f);
+            std::string lat, longi;
+            getline(f, lat);
+            getline(f, longi);
+            // TODO GESTION d'ERREUR
+            latitude = std::stol(lat);
+            longitude = std::stol(longi);
+        }
+        else
+        {
+            std::cerr << "Erreur : Impossible d'ouvrir le fichier en lecture." << std::endl;
+        }
+    }
 };
 #endif

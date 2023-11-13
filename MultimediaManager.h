@@ -22,6 +22,8 @@ public:
     MultimediaManager(const std::map<std::string, std::shared_ptr<Multimedia>> &initialMultimedia,
                       const std::map<std::string, std::shared_ptr<Group>> &initialGroups);
 
+    MultimediaManager(){};
+
     // Function to create a Video object and add it to multimediaTable
     std::shared_ptr<Video> createVideo(int duration, const std::string &name, const std::string &fileName);
 
@@ -32,7 +34,7 @@ public:
     std::shared_ptr<Film> createFilm(int *array, int nb, int duration, std::string name, std::string fileName);
 
     // Function to create a Group object and add it to groupTable
-    std::shared_ptr<Group> createGroup(std::string groupName, const std::list<std::shared_ptr<Multimedia>> &sourceList);
+    std::shared_ptr<Group> createGroup(std::string groupName, const std::list<std::string> &sourceList);
 
     // Fonction pour rechercher et afficher un objet multimédia par son nom
     void findAndPrintMultimedia(const std::string &name, std::ostream &s) const;
@@ -57,6 +59,12 @@ public:
 
     // Method that find media names containing a given char sequence
     std::list<std::string> findMediaContainingCharSeq(const std::string &charSeq) const;
+
+    //call read method of a media
+    void read(std::ifstream &f,std::string mediaName);
+
+    //call read method of a media
+    void write(std::ofstream &f,std::string mediaName);
 
     /*Find media that are from a certain type
     exemple of use :

@@ -11,7 +11,8 @@ MultimediaManager::MultimediaManager(const std::map<std::string, std::shared_ptr
 std::shared_ptr<Video>
 MultimediaManager::createVideo(int duration, const std::string &name, const std::string &fileName)
 {
-    std::shared_ptr<Video> video = std::make_shared<Video>(duration, name, fileName);
+    // std::shared_ptr<Video> video = std::make_shared<Video>(duration, name, fileName);
+    std::shared_ptr<Video> video(new Video(duration, name, fileName));
     multimediaTable[name] = video;
     return video;
 }
@@ -20,7 +21,7 @@ MultimediaManager::createVideo(int duration, const std::string &name, const std:
 std::shared_ptr<Photo>
 MultimediaManager::createPhoto(float latitude, float longitude, std::string name, std::string fileName)
 {
-    std::shared_ptr<Photo> photo = std::make_shared<Photo>(latitude, longitude, name, fileName);
+    std::shared_ptr<Photo> photo(new Photo(latitude, longitude, name, fileName));
     multimediaTable[name] = photo;
     return photo;
 }
@@ -30,17 +31,32 @@ std::shared_ptr<Film>
 MultimediaManager::
     createFilm(int *array, int nb, int duration, std::string name, std::string fileName)
 {
-    std::shared_ptr<Film> film = std::make_shared<Film>(array, nb, duration, name, fileName);
+    std::shared_ptr<Film> film(new Film(array, nb, duration, name, fileName));
     multimediaTable[name] = film;
     return film;
 }
 
 // Function to create a Group object and add it to groupTable
+// originally I gave a list of Multimedia in argument, but since only MultimediaManager is able
+// to manipulate Multimedia objects I had to change the signature
 std::shared_ptr<Group>
 MultimediaManager::
-    createGroup(std::string groupName, const std::list<std::shared_ptr<Multimedia>> &sourceList)
+    createGroup(std::string groupName, const std::list<std::string> &sourceList)
 {
-    std::shared_ptr<Group> group = std::make_shared<Group>(groupName, sourceList);
+    std::list<std::shared_ptr<Multimedia>> list_ptr;
+    for (const std::string &element : sourceList)
+    {
+        auto it = multimediaTable.find(element);
+        if (it != multimediaTable.end())
+        {
+            list_ptr.push_back(it->second);
+        }
+        else
+        {
+            std::cerr << "Media :" << element << "not found \n";
+        }
+    }
+    std::shared_ptr<Group> group = std::make_shared<Group>(groupName, list_ptr);
     groupTable[groupName] = group;
     return group;
 }
@@ -157,7 +173,6 @@ std::list<std::string> MultimediaManager::findMediaContainingCharSeq(const std::
     return matchingNames;
 }
 
-
 // returns all media names from the map in a list
 std::list<std::string> MultimediaManager::findAllMedia() const
 {
@@ -167,4 +182,30 @@ std::list<std::string> MultimediaManager::findAllMedia() const
         allNames.push_back(pair.first);
     }
     return allNames;
+}
+
+// call read method of a media
+void MultimediaManager::read(std::ifstream &f, std::string mediaName){
+    auto it = multimediaTable.find(mediaName);
+        if (it != multimediaTable.end())
+        {
+            it->second->read(f);
+        }
+        else
+        {
+            std::cerr << "Media :" << mediaName << "not found \n";
+        }
+}
+
+// call read method of a media
+void MultimediaManager::write(std::ofstream &f, std::string mediaName){
+    auto it = multimediaTable.find(mediaName);
+        if (it != multimediaTable.end())
+        {
+            it->second->write(f);
+        }
+        else
+        {
+            std::cerr << "Media :" << mediaName << "not found \n";
+        }
 }

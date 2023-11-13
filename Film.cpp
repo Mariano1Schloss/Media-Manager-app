@@ -99,29 +99,44 @@ void Film::print(std::ostream &s) const
     }
 }
 
-void Film::write(std::ostream &f)
+void Film::write(std::ofstream &f)
 {
-    Video::write(f);
-    std::string n = std::to_string(nb_chapter);
-    f << getClassName() << 'n' << n << '\n';
-    for (int i = 0; i < nb_chapter; i++)
+    if (f.is_open())
     {
-        std::string c = std::to_string(chapters[i]);
-        f << c << '\n';
+        Video::write(f);
+        std::string n = std::to_string(nb_chapter);
+        f << n << '\n';
+        for (int i = 0; i < nb_chapter; i++)
+        {
+            std::string c = std::to_string(chapters[i]);
+            f << c << '\n';
+        }
+    }
+    else
+    {
+        std::cerr << "Erreur : Impossible d'ouvrir le fichier en écriture." << std::endl;
     }
 }
 
-void Film::read(std::istream &f)
+void Film::read(std::ifstream &f)
 {
-    Video::read(f);
-    std::string n;
-    getline(f, n);
-    // TODO GESTION d'ERREUR
-    nb_chapter = std::stoi(n);
-    for (int i = 0; i < nb_chapter; i++)
+    if (f.is_open())
     {
-        std::string c;
-        getline(f, c);
-        chapters[i] = std::stoi(c);
+        Video::read(f);
+        std::string n;
+        getline(f, n);
+        // TODO GESTION d'ERREUR
+        nb_chapter = std::stoi(n);
+        for (int i = 0; i < nb_chapter; i++)
+        {
+            std::string c;
+            getline(f, c);
+            chapters[i] = std::stoi(c);
+        }
+        f.close();
+    }
+    else
+    {
+        std::cerr << "Erreur : Impossible d'ouvrir le fichier en lecture." << std::endl;
     }
 };

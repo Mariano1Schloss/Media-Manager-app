@@ -3,7 +3,7 @@
 //  TP C++
 //  Eric Lecolinet - Telecom ParisTech - 2016.
 //
-#define SERVER_MAIN
+//#define SERVER_MAIN
 #ifdef SERVER_MAIN
 #include <memory>
 #include <string>

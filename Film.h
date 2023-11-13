@@ -9,11 +9,12 @@ private:
     int *chapters;
     int nb_chapter;
 
-public:
+protected:
     Film(int *array, int nb, int duration, std::string name, std::string fileName);
-
     Film() : Video(), chapters{nullptr}, nb_chapter{0} {}
 
+public:
+    friend class MultimediaManager;
     // destructor : deallocate memory
     ~Film() { delete[] chapters; }
 
@@ -36,9 +37,9 @@ public:
     std::string getClassName() override { return "Film"; }
 
     // Write object attributes and class name into a file
-    void write(std::ostream &f) override;
+    void write(std::ofstream &f) override;
 
     // read objects attributes from a file
-    void read(std::istream &f) override;
+    void read(std::ifstream &f) override;
 };
 #endif

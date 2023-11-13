@@ -2,7 +2,7 @@
 #define Graph_Multimedia
 #include <string>
 #include <iostream>
-#include <iostream>
+#include <fstream>
 
 class Multimedia
 {
@@ -34,11 +34,11 @@ public:
     // return class name "Multimedia"
     virtual std::string getClassName() { return std::string("Multimedia"); }
 
-    virtual void write(std::ostream &f) { f << getClassName() << '\n'
+    virtual void write(std::ofstream &f) { f << getClassName() << '\n'
                                             << name << '\n'
                                             << fileName << '\n'; }
 
-    virtual void read(std::istream &f)
+    virtual void read(std::ifstream &f)
     {
         getline(f, name);
         getline(f, fileName);

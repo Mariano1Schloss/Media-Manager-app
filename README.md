@@ -4,6 +4,8 @@ COMMENTER
 Pour les segfault : valgrind ./myprog
 VERIFIER TOUS les IFDEF etc..
 INITIALISER LES POINTEURS ET TYPES DE BASE
+Ameliorer la qualité de renvoi des prints?
+faire une description des formats de sérialisation utilisés
 
 //4 
 Pourquoi redéfinir print() dans Photo.h??
@@ -48,3 +50,4 @@ use of typeid dans le template : bof
 1) Ecrire les méthodes de renvoi de fichier dans MULTIMEDIA,FILM, VIDEO, PHOTO
 2)ECRIRE LES methodes de lecture/ecriture dans MULTIMEDIA,FILM, VIDEO, PHOTO
         -> test d'erreur dans la conversion str->long dans Photo??
+        si y a le temps faire les questions additionelles
