@@ -98,3 +98,30 @@ void Film::print(std::ostream &s) const
         }
     }
 }
+
+void Film::write(std::ostream &f)
+{
+    Video::write(f);
+    std::string n = std::to_string(nb_chapter);
+    f << getClassName() << 'n' << n << '\n';
+    for (int i = 0; i < nb_chapter; i++)
+    {
+        std::string c = std::to_string(chapters[i]);
+        f << c << '\n';
+    }
+}
+
+void Film::read(std::istream &f)
+{
+    Video::read(f);
+    std::string n;
+    getline(f, n);
+    // TODO GESTION d'ERREUR
+    nb_chapter = std::stoi(n);
+    for (int i = 0; i < nb_chapter; i++)
+    {
+        std::string c;
+        getline(f, c);
+        chapters[i] = std::stoi(c);
+    }
+};

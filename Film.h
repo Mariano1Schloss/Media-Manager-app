@@ -31,5 +31,14 @@ public:
     void setChapters(const int *newArray, int newArrayLength);
 
     void print(std::ostream &s) const override;
+
+    // return Class name "Film"
+    std::string getClassName() override { return "Film"; }
+
+    // Write object attributes and class name into a file
+    void write(std::ostream &f) override;
+
+    // read objects attributes from a file
+    void read(std::istream &f) override;
 };
 #endif

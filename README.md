@@ -2,6 +2,8 @@ TO DO :
 Constructeur vide et destructeur??
 COMMENTER
 Pour les segfault : valgrind ./myprog
+VERIFIER TOUS les IFDEF etc..
+INITIALISER LES POINTEURS ET TYPES DE BASE
 
 //4 
 Pourquoi redéfinir print() dans Photo.h??
@@ -40,3 +42,9 @@ TESTER LA CLASSE
 Gérer la gestion d'erreur dans la recherche de fichier ??
 PAreil avant de play le fichier dans le cas où aucun fichier n'est trouvé
 PAreil dans la suppression
+use of typeid dans le template : bof 
+
+//12 ETAPES :
+1) Ecrire les méthodes de renvoi de fichier dans MULTIMEDIA,FILM, VIDEO, PHOTO
+2)ECRIRE LES methodes de lecture/ecriture dans MULTIMEDIA,FILM, VIDEO, PHOTO
+        -> test d'erreur dans la conversion str->long dans Photo??

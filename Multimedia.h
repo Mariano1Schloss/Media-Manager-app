@@ -30,5 +30,18 @@ public:
     virtual void print(std::ostream &s) const;
 
     virtual void play() = 0; // méthode abstraite
+
+    // return class name "Multimedia"
+    virtual std::string getClassName() { return std::string("Multimedia"); }
+
+    virtual void write(std::ostream &f) { f << getClassName() << '\n'
+                                            << name << '\n'
+                                            << fileName << '\n'; }
+
+    virtual void read(std::istream &f)
+    {
+        getline(f, name);
+        getline(f, fileName);
+    };
 };
 #endif
