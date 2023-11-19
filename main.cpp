@@ -2,7 +2,7 @@
 // main.cpp
 // Created on 21/10/2018
 //
-//#define MAIN
+// #define MAIN
 #ifdef MAIN
 #include "Photo.h"
 #include "Video.h"
@@ -89,25 +89,15 @@ int main(int argc, const char *argv[])
 
     // create multimedia manager
     MultimediaManager *manager = new MultimediaManager();
-    manager->createVideo(5, "Video 1", ".");
-    manager->createVideo(6, "Video 2", ".");
-    int array[] = {1, 2, 3};
-    manager->createFilm(array, 3, 6, "Film 1", "./movie.mp4");
-    manager->createPhoto(1, 1, "Photo 1", "./assets/photo1.jpg");
-    manager->createPhoto(2, 2, "Photo 2", ".");
+    manager->createVideo(30, "Video 1", "./assets/video1.mp4");
+    manager->createVideo(30, "Video 2", "./assets/video2.mp4");
+    int array[] = {15, 7, 8};
+    manager->createFilm(array, 3, 30, "Film 1", "./assets/film1.mp4");
+    manager->createPhoto(640, 426, "Photo 1", "./assets/photo1.jpg");
+    manager->createPhoto(1280, 853, "Photo 2", "./assets/photo2.jpg");
     manager->createGroup("Group 1", {"Video 1", "Film 1", "Photo 1"});
     manager->createGroup("Group 2", {"Video 2", "Photo 2"});
 
-    // modifier la methode create group pour qu'elle prenne en argument une liste de string et qu'elle recherche les pointeurs dans la map
-    manager->findMediaStartingWithCharSeq("V");
-    manager->findAndPrintMultimedia("Film 1", cout);
-    std::ofstream outputFile("./assets/data.txt");
-    manager->write(outputFile, "Film 1");
-    manager->write(outputFile, "Video 1");
-    manager->write(outputFile, "Photo 1");
-    manager->findAndPlayMultimedia("Photo 1");
-
-    outputFile.close();
     return 0;
 };
 #endif

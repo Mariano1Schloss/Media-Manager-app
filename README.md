@@ -6,6 +6,9 @@ VERIFIER TOUS les IFDEF etc..
 INITIALISER LES POINTEURS ET TYPES DE BASE
 Ameliorer la qualité de renvoi des prints?
 faire une description des formats de sérialisation utilisés
+#### 
+solution question 7: implémentation copie profonde???
+####
 
 //4 
 Pourquoi redéfinir print() dans Photo.h??
@@ -51,3 +54,18 @@ use of typeid dans le template : bof
 2)ECRIRE LES methodes de lecture/ecriture dans MULTIMEDIA,FILM, VIDEO, PHOTO
         -> test d'erreur dans la conversion str->long dans Photo??
         si y a le temps faire les questions additionelles
+
+Format de sérialisation : 
+Nom de la classe (Photo, Video ou Film)
+Nom du média
+Chemin d'accès du fichier
+Attributs du média:
+        -Pour les photos: 
+                Latitude
+                Longitude
+        -Pour les vidéos:
+                Durée
+        -Pour les films:
+                durée
+                nombre de chapitres
+                Une ligne par durée de chapitre, dans l'ordre chronologique des chapitres

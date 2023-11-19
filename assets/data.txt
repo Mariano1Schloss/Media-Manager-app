@@ -1,26 +1,26 @@
 Film
 Film 1
-./movie.mp4
-6
+./assets/film1.mp4
+30
 3
-1
-2
-3
+15
+7
+8
 Photo
 Photo 1
 ./assets/photo1.jpg
-1
-1
+640
+426
 Photo
 Photo 2
-.
-2
-2
+./assets/photo2.jpg
+1280
+853
 Video
 Video 1
-.
-5
+./assets/video1.mp4
+30
 Video
 Video 2
-.
-6
+./assets/video2.mp4
+30

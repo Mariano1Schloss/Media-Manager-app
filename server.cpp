@@ -177,12 +177,12 @@ int main(int argc, char *argv[])
 
   // create multimedia manager
   MultimediaManager *manager = new MultimediaManager();
-  manager->createVideo(5, "Video 1", ".");
-  manager->createVideo(6, "Video 2", ".");
-  int array[] = {1, 2, 3};
-  manager->createFilm(array, 3, 6, "Film 1", "./movie.mp4");
-  manager->createPhoto(1, 1, "Photo 1", "./assets/photo1.jpg");
-  manager->createPhoto(2, 2, "Photo 2", ".");
+  manager->createVideo(30, "Video 1", "./assets/video1.mp4");
+  manager->createVideo(30, "Video 2", "./assets/video2.mp4");
+  int array[] = {15, 7, 8};
+  manager->createFilm(array, 3, 30, "Film 1", "./assets/film1.mp4");
+  manager->createPhoto(640, 426, "Photo 1", "./assets/photo1.jpg");
+  manager->createPhoto(1280, 853, "Photo 2", "./assets/photo2.jpg");
   manager->createGroup("Group 1", {"Video 1", "Film 1", "Photo 1"});
   manager->createGroup("Group 2", {"Video 2", "Photo 2"});
 
@@ -214,16 +214,16 @@ int main(int argc, char *argv[])
     // the request sent by the client to the server
     std::cout << "request: " << request << std::endl;
 
-    // the response that the server sends back to the client
+    // the response that the server sends back to the client:
     //converting the request into a string stream
     std::stringstream request_stream (request);
-    std::string first_word,second_part;
-    request_stream >> first_word;
+    std::string requestName,requestArgument;
+    request_stream >> requestName;
     
-// Read the rest of the line into second_part
-    std::getline(request_stream >> std::ws, second_part);    
-    if (requestFunctionsMap.find(first_word) != requestFunctionsMap.end()) {
-        response = requestFunctionsMap[first_word](second_part, manager);  // Call the function
+// Read the rest of the line into requestArgument
+    std::getline(request_stream >> std::ws, requestArgument);    
+    if (requestFunctionsMap.find(requestName) != requestFunctionsMap.end()) {
+        response = requestFunctionsMap[requestName](requestArgument, manager);  // Call the function
     } else {
         std::cout << "Function not found." << std::endl;
             response = "RECEIVED: " + request;
