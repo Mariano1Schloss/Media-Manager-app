@@ -1,0 +1,257 @@
+\doxysection{Photo Class Reference}
+\hypertarget{class_photo}{}\label{class_photo}\index{Photo@{Photo}}
+
+
+classe representant une \doxylink{class_photo}{Photo}  
+
+
+
+
+{\ttfamily \#include $<$Photo.\+h$>$}
+
+Inheritance diagram for Photo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_photo}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_photo_ab5210f7e59cebdd09bb470bd10455c8a}{get\+Latitude}} () const
+\begin{DoxyCompactList}\small\item\em Getter de la latitude de la \doxylink{class_photo}{Photo} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance latitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_a36be9d8cbefb077a06fa7901aa8afe06}{set\+Latitude}} (float lat)
+\begin{DoxyCompactList}\small\item\em Setter de la latitude de \doxylink{class_photo}{Photo} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance latitude. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_photo_a5410155fe937b7ccc21d6335d8fc7e2c}{get\+Longitude}} () const
+\begin{DoxyCompactList}\small\item\em Getter de la longitude de la \doxylink{class_photo}{Photo} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance longitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_ac39296e344ce8faab4c6412736f7e4a6}{set\+Longitude}} (float lon)
+\begin{DoxyCompactList}\small\item\em Setter de la longitude \doxylink{class_photo}{Photo} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance longitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_a089cdcc933ac348cdd162780fc8f20d0}{print}} (std\+::ostream \&s) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations de \doxylink{class_photo}{Photo} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_photo}{Photo} Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a089cdcc933ac348cdd162780fc8f20d0}{print()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_a6b1cf4bd8aff9a446c5ee47c86a2a4c2}{play}} () override
+\begin{DoxyCompactList}\small\item\em Joue la \doxylink{class_photo}{Photo} sur le serveur Méthode qui permet d\textquotesingle{}afficher la photo sur le serveur à l\textquotesingle{}aide d\textquotesingle{}imagej. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_photo_a3a4fab93e8b4c8e42bae96c9666f1987}{get\+Class\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Photo"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_a00895bfe174d28c66e5e25e92dd1088d}{write}} (std\+::ofstream \&f) override
+\begin{DoxyCompactList}\small\item\em Sérialise une \doxylink{class_photo}{Photo} Méthode qui sérialise un objet \doxylink{class_photo}{Photo} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a00895bfe174d28c66e5e25e92dd1088d}{write()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_photo_a35891869f72424a42fec4e259b5f18e0}{read}} (std\+::ifstream \&f) override
+\begin{DoxyCompactList}\small\item\em Désérialise une \doxylink{class_photo}{Photo} Méthode qui désérialise un objet \doxylink{class_photo}{Photo} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a35891869f72424a42fec4e259b5f18e0}{read()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_multimedia_a6105129da1041cc546f67fbd79f244f4}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du fichier du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}{set\+File\+Name}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du fichier du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_photo_ae2db3274f96d4b0886e86e7ab38f8232}{Photo}} (float latitude, float longitude, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe \doxylink{class_photo}{Photo}. Appelle d\textquotesingle{}abord le vonstructeur de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+\Hypertarget{class_photo_a10ef03ede9235052eb9f7d5e950f85d3}\label{class_photo_a10ef03ede9235052eb9f7d5e950f85d3} 
+{\bfseries Photo} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de base la classe \doxylink{class_photo}{Photo} Appelle d\textquotesingle{}abord le constructeur de base de \doxylink{class_multimedia}{Multimedia} Initialise longitude et latitude avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f}{Multimedia}} (std\+::string name, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia. \end{DoxyCompactList}\item 
+{\bfseries Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia Initialise name et filename avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_photo_a29a97f20d6ded769adf9ecc47158e24f}{Multimedia\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe representant une \doxylink{class_photo}{Photo} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_photo_ae2db3274f96d4b0886e86e7ab38f8232}\label{class_photo_ae2db3274f96d4b0886e86e7ab38f8232} 
+\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{Photo()}{Photo()}}
+{\footnotesize\ttfamily Photo\+::\+Photo (\begin{DoxyParamCaption}\item[{float}]{latitude,  }\item[{float}]{longitude,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructeur Constructeur de la classe \doxylink{class_photo}{Photo}. Appelle d\textquotesingle{}abord le vonstructeur de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: nom de la \doxylink{class_video}{Video} \\
+\hline
+{\em file\+Name} & \+: nom du fichier associé à la \doxylink{class_video}{Video} \\
+\hline
+{\em latitude} & \+: latitude de la photo \\
+\hline
+{\em longitude} & \+: longitude de la photo \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_photo_a3a4fab93e8b4c8e42bae96c9666f1987}\label{class_photo_a3a4fab93e8b4c8e42bae96c9666f1987} 
+\index{Photo@{Photo}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily std\+::string Photo\+::get\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Photo"{}. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Photo"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{Multimedia}}.
+
+\Hypertarget{class_photo_ab5210f7e59cebdd09bb470bd10455c8a}\label{class_photo_ab5210f7e59cebdd09bb470bd10455c8a} 
+\index{Photo@{Photo}!getLatitude@{getLatitude}}
+\index{getLatitude@{getLatitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getLatitude()}{getLatitude()}}
+{\footnotesize\ttfamily float Photo\+::get\+Latitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter de la latitude de la \doxylink{class_photo}{Photo} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance latitude. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance latitude 
+\end{DoxyReturn}
+\Hypertarget{class_photo_a5410155fe937b7ccc21d6335d8fc7e2c}\label{class_photo_a5410155fe937b7ccc21d6335d8fc7e2c} 
+\index{Photo@{Photo}!getLongitude@{getLongitude}}
+\index{getLongitude@{getLongitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getLongitude()}{getLongitude()}}
+{\footnotesize\ttfamily float Photo\+::get\+Longitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter de la longitude de la \doxylink{class_photo}{Photo} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance longitude. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance longitude 
+\end{DoxyReturn}
+\Hypertarget{class_photo_a6b1cf4bd8aff9a446c5ee47c86a2a4c2}\label{class_photo_a6b1cf4bd8aff9a446c5ee47c86a2a4c2} 
+\index{Photo@{Photo}!play@{play}}
+\index{play@{play}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Photo\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Joue la \doxylink{class_photo}{Photo} sur le serveur Méthode qui permet d\textquotesingle{}afficher la photo sur le serveur à l\textquotesingle{}aide d\textquotesingle{}imagej. 
+
+
+
+Implements \mbox{\hyperlink{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18}{Multimedia}}.
+
+\Hypertarget{class_photo_a089cdcc933ac348cdd162780fc8f20d0}\label{class_photo_a089cdcc933ac348cdd162780fc8f20d0} 
+\index{Photo@{Photo}!print@{print}}
+\index{print@{print}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Photo\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affiche les informations de \doxylink{class_photo}{Photo} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_photo}{Photo} Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a089cdcc933ac348cdd162780fc8f20d0}{print()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{Multimedia}}.
+
+\Hypertarget{class_photo_a35891869f72424a42fec4e259b5f18e0}\label{class_photo_a35891869f72424a42fec4e259b5f18e0} 
+\index{Photo@{Photo}!read@{read}}
+\index{read@{read}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Photo\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Désérialise une \doxylink{class_photo}{Photo} Méthode qui désérialise un objet \doxylink{class_photo}{Photo} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a35891869f72424a42fec4e259b5f18e0}{read()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux d\textquotesingle{}entrée souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{Multimedia}}.
+
+\Hypertarget{class_photo_a36be9d8cbefb077a06fa7901aa8afe06}\label{class_photo_a36be9d8cbefb077a06fa7901aa8afe06} 
+\index{Photo@{Photo}!setLatitude@{setLatitude}}
+\index{setLatitude@{setLatitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setLatitude()}{setLatitude()}}
+{\footnotesize\ttfamily void Photo\+::set\+Latitude (\begin{DoxyParamCaption}\item[{float}]{lat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter de la latitude de \doxylink{class_photo}{Photo} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance latitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & la nouvelle valeur de la variable d\textquotesingle{}instance latitude \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_photo_ac39296e344ce8faab4c6412736f7e4a6}\label{class_photo_ac39296e344ce8faab4c6412736f7e4a6} 
+\index{Photo@{Photo}!setLongitude@{setLongitude}}
+\index{setLongitude@{setLongitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setLongitude()}{setLongitude()}}
+{\footnotesize\ttfamily void Photo\+::set\+Longitude (\begin{DoxyParamCaption}\item[{float}]{lon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter de la longitude \doxylink{class_photo}{Photo} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance longitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & la nouvelle valeur de la variable d\textquotesingle{}instance longitude \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_photo_a00895bfe174d28c66e5e25e92dd1088d}\label{class_photo_a00895bfe174d28c66e5e25e92dd1088d} 
+\index{Photo@{Photo}!write@{write}}
+\index{write@{write}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Photo\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sérialise une \doxylink{class_photo}{Photo} Méthode qui sérialise un objet \doxylink{class_photo}{Photo} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_photo_a00895bfe174d28c66e5e25e92dd1088d}{write()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{Multimedia}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_photo_a29a97f20d6ded769adf9ecc47158e24f}\label{class_photo_a29a97f20d6ded769adf9ecc47158e24f} 
+\index{Photo@{Photo}!MultimediaManager@{MultimediaManager}}
+\index{MultimediaManager@{MultimediaManager}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{MultimediaManager}{MultimediaManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_multimedia_manager}{Multimedia\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+On souhaite que seule la classe \doxylink{class_multimedia_manager}{Multimedia\+Manager} puisse instancier \doxylink{class_video}{Video} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_photo_8h}{Photo.\+h}}\end{DoxyCompactItemize}

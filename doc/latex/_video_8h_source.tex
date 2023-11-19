@@ -1,0 +1,78 @@
+\doxysection{Video.\+h}
+\hypertarget{_video_8h_source}{}\label{_video_8h_source}\mbox{\hyperlink{_video_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ Graph\_Video}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ Graph\_Video}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_multimedia_8h}{Multimedia.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_video}{Video}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ duration;\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_video_a728bbcb971449bdc91dd6f90c356f4d2}{Video}}(\textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ fileName)\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(name,\ fileName),\ duration\{duration\}\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_video_ab67336c2c5b6227a9635bc7dcd6af543}{Video}}()\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(),\ duration\{0\}\ \{\}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2}{getDuration}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ duration;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_a59b267094d61d47042569c076373fdc1}{setDuration}}(\textcolor{keywordtype}{int}\ dur)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ duration\ =\ dur;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_a1454b5730b096813188ce4b87c989224}{print}}(std::ostream\ \&s)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{Multimedia::print}}(s);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{}Video\ duration\ :\ "{}}\ <<\ \mbox{\hyperlink{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2}{getDuration}}()\ <<\ std::endl;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_a2d543313235b4d5181440b9a8f73e707}{play}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::string\ fileName\ =\ this-\/>\mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{getFileName}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::string\ systemArg\ =\ \textcolor{stringliteral}{"{}mpv\ "{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\ \&"{}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ system(systemArg.data());}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::string\ \mbox{\hyperlink{class_video_af6881e638d70858b1b58f25ee6510884}{getClassName}}()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}Video"{}});\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write}}(std::ofstream\ \&f)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f.is\_open())}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{Multimedia::write}}(f);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ d\ =\ std::to\_string(duration);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ f\ <<\ d\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ d'ouvrir\ le\ fichier\ en\ écriture."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read}}(std::ifstream\ \&f)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f.is\_open())}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{Multimedia::read}}(f);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ d;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ getline(f,\ d);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ GESTION\ d'ERREUR}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ duration\ =\ std::stoi(d);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ f.close();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ d'ouvrir\ le\ fichier\ en\ lecture."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \};}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -2,16 +2,23 @@
 
 Film::Film(int *array, int nb, int duration, std::string name, std::string fileName) : Video(duration, name, fileName)
 {
-    if (nb > 0)
+    int sum = 0;
+    for (int i = 0; i < nb; ++i)
+    {
+        sum += array[i];
+    }
+
+    if (sum == duration && nb > 0)
     {
         chapters = new int[nb];
         nb_chapter = nb;
-
         std::memcpy(chapters, array, nb * sizeof(int));
     }
     else
     {
+        std::cerr << "Invalid array of chapters" << std::endl;
         chapters = nullptr;
+        nb_chapter = 0;
     }
 }
 
@@ -90,11 +97,12 @@ void Film::setChapters(const int *newArray, int newArrayLength)
 void Film::print(std::ostream &s) const
 {
     Video::print(s);
+    s << "Nombre de chapitres du film : " << getNbChapter() << std::endl;
     if (chapters)
     {
         for (int i = 0; i < getNbChapter(); i++)
         {
-            s << getChapter(i) << std::endl;
+            s << "Durée du chapitre " << i << " : " << getChapter(i) << std::endl;
         }
     }
 }

@@ -3,7 +3,13 @@
 //  TP C++
 //  Eric Lecolinet - Telecom ParisTech - 2016.
 //
-//#define SERVER_MAIN
+/*!
+ * \file Group.h
+ * \author Mathieu Delbos - adapté de la version d'Eric Lecolinet
+ * \brief Serveur TCP qui permet de communiquer avec une interface graphique cliente pour effectuer des actions sur des médias
+ * \version 0.1
+ */
+#define SERVER_MAIN
 #ifdef SERVER_MAIN
 #include <memory>
 #include <string>
@@ -14,7 +20,12 @@
 
 const int PORT = 3331;
 
-// removing "\n" and "\r" characters
+/*!
+ *  \brief Enlève les caractères "\n" et "\r"
+ *  \param str : chaine de caractères à traiter
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return chaine de caractères traitée
+ */
 std::string removeEndl(std::string str)
 {
   std::string result;
@@ -28,7 +39,12 @@ std::string removeEndl(std::string str)
   return result;
 }
 
-// Search for a multimedia object or a group and display its attributes on the 'remote control'
+/*!
+ *  \brief requête pour chercher un média et afficher ses informations
+ *  \param name : nom du média
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return infos du média retournées par sa méthode print()
+ */
 std::string printRequest(std::string const &name, MultimediaManager const *manager)
 {
   // Create a string stream to retrieve information from print method
@@ -39,15 +55,24 @@ std::string printRequest(std::string const &name, MultimediaManager const *manag
   return removeEndl(str);
 }
 
-// Play a media by its name
+/*!
+ *  \brief requête pour chercher un média et le jouer
+ *  \param name : nom du média
+ *  \return status du résultat de la requête
+ */
 std::string playRequest(std::string const &name, MultimediaManager const *manager)
 {
-  manager->findAndPlayMultimedia(name);
-  std::string response = "Media was played";
+
+  std::string response = manager->findAndPlayMultimedia(name);
   return removeEndl(response);
 }
 
-// find media names that start with a given char sequence
+/*!
+ *  \brief Trouve le nom de médias commençant par une séquence de caractères donnée
+ *  \param charSeq : séquence de caractères à vérifier
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return noms de média trouvés
+ */
 std::string startWithCharSeqRequest(const std::string &charSeq, MultimediaManager const *manager)
 {
   std::string response;
@@ -59,7 +84,12 @@ std::string startWithCharSeqRequest(const std::string &charSeq, MultimediaManage
   return response;
 }
 
-// find media names that contain a given char sequence
+/*!
+ *  \brief Trouve le nom de médias contenant une séquence de caractères donnée
+ *  \param charSeq : séquence de caractères à vérifier
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return noms de médias trouvés
+ */
 std::string containCharSeqRequest(const std::string &charSeq, MultimediaManager const *manager)
 {
   std::string response;
@@ -71,7 +101,11 @@ std::string containCharSeqRequest(const std::string &charSeq, MultimediaManager 
   return response;
 }
 
-// find all media names contained in the dbb
+/*!
+ *  \brief Trouve le nom de tous les médias gérés par le manager
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return noms de médias trouvés
+ */
 std::string getAllMediaRequest(const std::string &s, MultimediaManager const *manager)
 {
   std::string response;
@@ -83,7 +117,12 @@ std::string getAllMediaRequest(const std::string &s, MultimediaManager const *ma
   return response;
 }
 
-// find media names for a specific type
+/*!
+ *  \brief Trouve le nom de médias selon leru type (Video, Film ou Photo)
+ *  \param type : type des médias à rechercher
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return noms de médias trouvés
+ */
 std::string getMediaByTypeRequest(const std::string &type, MultimediaManager const *manager)
 {
   std::list<std::string> results;
@@ -108,14 +147,24 @@ std::string getMediaByTypeRequest(const std::string &type, MultimediaManager con
   return response;
 }
 
-// delete a group by its name
+/*!
+ *  \brief Supprime un groupe par son nom
+ *  \param name : nom du groupe à supprimer
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return status de réponse de la requête
+ */
 std::string deleteGroupRequest(const std::string &name, MultimediaManager *manager)
 {
   manager->deleteGroup(name);
   return "group deleted";
 }
 
-// delete a object by its name
+/*!
+ *  \brief Supprime un média par son nom
+ *  \param name : nom du média à supprimer
+ *  \param manager: objet MultimediaManager utilisé pour manipuler les médias
+ *  \return status de réponse de la requête
+ */
 std::string deleteMultimediaRequest(const std::string &name, MultimediaManager *manager)
 {
   manager->deleteMultimedia(name);
@@ -124,40 +173,18 @@ std::string deleteMultimediaRequest(const std::string &name, MultimediaManager *
 
 int main(int argc, char *argv[])
 {
-  // We need to have a multi-media manager
-  // Create Video objects
-  std::shared_ptr<Multimedia> video1 = std::make_shared<Video>(5, "Video 1", ".");
-  std::shared_ptr<Multimedia> video2 = std::make_shared<Video>(6, "Video 2", ".");
-
-  // Create Film objects
-  int array[] = {1, 2, 3};
-  std::shared_ptr<Multimedia> film1 = std::make_shared<Film>(array, 3, 6, "Film 1", "./movie.mp4");
-
-  // Create Photo objects
-  std::shared_ptr<Multimedia> photo1 = std::make_shared<Photo>(1, 1, "Photo 1", ".");
-  std::shared_ptr<Multimedia> photo2 = std::make_shared<Photo>(2, 2, "Photo 2", ".");
-
-  // Create Group objects composed of films, videos, and photos
-  std::list<std::shared_ptr<Multimedia>> group1Items = {film1, photo2, video1, video2};
-  std::shared_ptr<Group> group1 = std::make_shared<Group>("Group 1", group1Items);
-  std::list<std::shared_ptr<Multimedia>> group2Items = {photo1, video2};
-  std::shared_ptr<Group> group2 = std::make_shared<Group>("Group 2", group2Items);
-
-  // Create a map for Multimedia items
-  std::map<std::string, std::shared_ptr<Multimedia>> multimediaMap;
-  multimediaMap["Video 1"] = video1;
-  multimediaMap["Video 2"] = video2;
-  multimediaMap["Film 1"] = film1;
-  multimediaMap["Photo 1"] = photo1;
-  multimediaMap["Photo 2"] = photo2;
-
-  // Create a map for Groups
-  std::map<std::string, std::shared_ptr<Group>> groupMap;
-  groupMap["Group 1"] = group1;
-  groupMap["Group 2"] = group2;
+  //  We need to have a multi-media manager
 
   // create multimedia manager
-  MultimediaManager *manager = new MultimediaManager(multimediaMap, groupMap);
+  MultimediaManager *manager = new MultimediaManager();
+  manager->createVideo(5, "Video 1", ".");
+  manager->createVideo(6, "Video 2", ".");
+  int array[] = {1, 2, 3};
+  manager->createFilm(array, 3, 6, "Film 1", "./movie.mp4");
+  manager->createPhoto(1, 1, "Photo 1", "./assets/photo1.jpg");
+  manager->createPhoto(2, 2, "Photo 2", ".");
+  manager->createGroup("Group 1", {"Video 1", "Film 1", "Photo 1"});
+  manager->createGroup("Group 2", {"Video 2", "Photo 2"});
 
   // create a method map
   std::map<std::string, std::function<std::string(const std::string &, MultimediaManager *)>> requestFunctionsMap;
@@ -170,6 +197,15 @@ int main(int argc, char *argv[])
   requestFunctionsMap["startWithCharSeqRequest"] = containCharSeqRequest;
   requestFunctionsMap["playRequest"] = playRequest;
 
+  // Serialize all the medias in the data.txt file
+  std::ofstream outputFile("./assets/data.txt");
+  std::list<std::string> medias = manager->findAllMedia();
+  for (std::string mediaName : medias)
+  {
+    manager->write(outputFile, mediaName);
+  }
+  outputFile.close();
+
   // cree le TCPServer
   auto *server =
       new TCPServer([&](std::string const &request, std::string &response)
@@ -181,12 +217,13 @@ int main(int argc, char *argv[])
     // the response that the server sends back to the client
     //converting the request into a string stream
     std::stringstream request_stream (request);
-    std::string first_word,second_word;
+    std::string first_word,second_part;
     request_stream >> first_word;
-    request_stream >> second_word;
     
+// Read the rest of the line into second_part
+    std::getline(request_stream >> std::ws, second_part);    
     if (requestFunctionsMap.find(first_word) != requestFunctionsMap.end()) {
-        response = requestFunctionsMap[first_word](second_word, manager);  // Call the function
+        response = requestFunctionsMap[first_word](second_part, manager);  // Call the function
     } else {
         std::cout << "Function not found." << std::endl;
             response = "RECEIVED: " + request;

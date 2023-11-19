@@ -1,0 +1,298 @@
+\doxysection{Film Class Reference}
+\hypertarget{class_film}{}\label{class_film}\index{Film@{Film}}
+
+
+Classe representant un \doxylink{class_film}{Film}, hérite de \doxylink{class_video}{Video}.  
+
+
+
+
+{\ttfamily \#include $<$Film.\+h$>$}
+
+Inheritance diagram for Film\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_film}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_film_a8dab653f8a6c0635ca5ddbe0bbdd9a25}\label{class_film_a8dab653f8a6c0635ca5ddbe0bbdd9a25} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Film} ()
+\begin{DoxyCompactList}\small\item\em Destructeur Destructeur de la classe \doxylink{class_film}{Film} Déalloue la mémoire de chapters. \end{DoxyCompactList}\item 
+const int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_film_a7bdcc9cb81df92862f98b3b6b286ab4a}{get\+Chapters}} () const
+\begin{DoxyCompactList}\small\item\em Getter deu tableau de chapitres Methode qui permet de retourner la variable d\textquotesingle{}instance chapters. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_film_ad698a728b7b705311b7afde279b62c9c}{get\+Chapter}} (int index) const
+\begin{DoxyCompactList}\small\item\em Getter indexé de chapters Methode qui permet de retourner la durée du chapitre à un index spéicifié \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_film_a74c59f361a5457df3b6337c1744a24a8}{get\+Nb\+Chapter}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nombre des chapitres Methode qui permet de retourner la valeure de la variable d\textquotesingle{}instance nb\+\_\+chapter. \end{DoxyCompactList}\item 
+\Hypertarget{class_film_a0c8a2b75af331fc5e5b23c207f1b1704}\label{class_film_a0c8a2b75af331fc5e5b23c207f1b1704} 
+void {\bfseries delete\+\_\+chapters} ()
+\begin{DoxyCompactList}\small\item\em Getter indexé de chapters Déalloue la mémoire de chapters et initialsie chapters à nullptr et nb\+\_\+chapter à 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_ab42358c662411b30209bf1ab08c3fea1}{set\+Chapter\+Value}} (int index, int value)
+\begin{DoxyCompactList}\small\item\em Setter indexé de chapters Méthode qui permet de modifier la durée d\textquotesingle{}un chapitre à un index spécifié \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_aceb1d7e06405271ccd32ff0133a343ff}{set\+Chapters}} (const int \texorpdfstring{$\ast$}{*}new\+Array, int new\+Array\+Length)
+\begin{DoxyCompactList}\small\item\em Remplace chapter par un nouveau tableau d\textquotesingle{}entiers Supprime le tableau chapters actuel avec la méthode \doxylink{class_film_a0c8a2b75af331fc5e5b23c207f1b1704}{delete\+\_\+chapters()} et le remplace par le tableau passé en paramètres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_a2eb49b2c86d9457ac8dccbebed9faa47}{print}} (std\+::ostream \&s) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations du \doxylink{class_film}{Film} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_film}{Film} Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_a2eb49b2c86d9457ac8dccbebed9faa47}{print()} de \doxylink{class_video}{Video}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_film_aea2dfc377d2867b9635c86283854dae6}{get\+Class\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Film"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_a79dfe7f3355d93a24e7d7f4627601d60}{write}} (std\+::ofstream \&f) override
+\begin{DoxyCompactList}\small\item\em Sérialise un \doxylink{class_film}{Film} Méthode qui sérialise un objet \doxylink{class_film}{Film} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_a79dfe7f3355d93a24e7d7f4627601d60}{write()} de \doxylink{class_video}{Video}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_film_aa35a1cd4304fb2d6bd05481b5bd36202}{read}} (std\+::ifstream \&f) override
+\begin{DoxyCompactList}\small\item\em Désérialise un \doxylink{class_film}{Film} Méthode qui désérialise un objet \doxylink{class_film}{Film} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_aa35a1cd4304fb2d6bd05481b5bd36202}{read()} de \doxylink{class_video}{Video}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Getter de la durée de la \doxylink{class_video}{Video} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a59b267094d61d47042569c076373fdc1}{set\+Duration}} (int dur)
+\begin{DoxyCompactList}\small\item\em Setter de la durée de \doxylink{class_video}{Video} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a1454b5730b096813188ce4b87c989224}{print}} (std\+::ostream \&s) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations de \doxylink{class_video}{Video} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_video}{Video} Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a1454b5730b096813188ce4b87c989224}{print()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a2d543313235b4d5181440b9a8f73e707}{play}} () override
+\begin{DoxyCompactList}\small\item\em Joue la vidéo sur le serveur Méthode qui permet de lire la vidéo sur le serveur à l\textquotesingle{}aide de mpv. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_video_af6881e638d70858b1b58f25ee6510884}{get\+Class\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Photo"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write}} (std\+::ofstream \&f) override
+\begin{DoxyCompactList}\small\item\em Sérialise une \doxylink{class_video}{Video} Méthode qui sérialise un objet \doxylink{class_video}{Video} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read}} (std\+::ifstream \&f) override
+\begin{DoxyCompactList}\small\item\em Désérialise une \doxylink{class_video}{Video} Méthode qui désérialise un objet \doxylink{class_video}{Video} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_multimedia_a6105129da1041cc546f67fbd79f244f4}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du fichier du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}{set\+File\+Name}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du fichier du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_film_a01d6b525a2eab395cc661f4ff8a14a95}{Film}} (int \texorpdfstring{$\ast$}{*}array, int nb, int duration, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe \doxylink{class_film}{Film}. Appelle d\textquotesingle{}abord le constructeur de \doxylink{class_video}{Video} Contrainte \+: la somme des durées des chapitres doit être égale à la durée du film. \end{DoxyCompactList}\item 
+\Hypertarget{class_film_af2835db2b0ef3a87aaa3222f4d9d1ae3}\label{class_film_af2835db2b0ef3a87aaa3222f4d9d1ae3} 
+{\bfseries Film} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de base de la classe \doxylink{class_film}{Film} Appelle d\textquotesingle{}abord le constructeur de base de \doxylink{class_video}{Video} Initialise chapters et nb\+\_\+chapter avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_video}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_video_a728bbcb971449bdc91dd6f90c356f4d2}{Video}} (int duration, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe \doxylink{class_video}{Video}. Appelle d\textquotesingle{}abord le constructeur de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+{\bfseries Video} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de base de la classe \doxylink{class_photo}{Photo} Appelle d\textquotesingle{}abord le constructeur de base de \doxylink{class_multimedia}{Multimedia} Initialise duration avec une valeur défaut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f}{Multimedia}} (std\+::string name, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia. \end{DoxyCompactList}\item 
+{\bfseries Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia Initialise name et filename avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_film_a29a97f20d6ded769adf9ecc47158e24f}{Multimedia\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe representant un \doxylink{class_film}{Film}, hérite de \doxylink{class_video}{Video}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_film_a01d6b525a2eab395cc661f4ff8a14a95}\label{class_film_a01d6b525a2eab395cc661f4ff8a14a95} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{array,  }\item[{int}]{nb,  }\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructeur Constructeur de la classe \doxylink{class_film}{Film}. Appelle d\textquotesingle{}abord le constructeur de \doxylink{class_video}{Video} Contrainte \+: la somme des durées des chapitres doit être égale à la durée du film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \+: tableau des durées des chapitres \\
+\hline
+{\em nb} & \+: nombre de chapitres \\
+\hline
+{\em name} & \+: nom du \doxylink{class_film}{Film} \\
+\hline
+{\em file\+Name} & \+: nom du fichier associé au \doxylink{class_film}{Film} \\
+\hline
+{\em duration} & \+: durée du \doxylink{class_film}{Film} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_film_ad698a728b7b705311b7afde279b62c9c}\label{class_film_ad698a728b7b705311b7afde279b62c9c} 
+\index{Film@{Film}!getChapter@{getChapter}}
+\index{getChapter@{getChapter}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapter()}{getChapter()}}
+{\footnotesize\ttfamily const int Film\+::get\+Chapter (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Getter indexé de chapters Methode qui permet de retourner la durée du chapitre à un index spéicifié 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index du chapitre dont on veut connaitre la durée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la durée du chapitre à l\textquotesingle{}index "{}index"{} 
+\end{DoxyReturn}
+\Hypertarget{class_film_a7bdcc9cb81df92862f98b3b6b286ab4a}\label{class_film_a7bdcc9cb81df92862f98b3b6b286ab4a} 
+\index{Film@{Film}!getChapters@{getChapters}}
+\index{getChapters@{getChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapters()}{getChapters()}}
+{\footnotesize\ttfamily const int \texorpdfstring{$\ast$}{*} Film\+::get\+Chapters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter deu tableau de chapitres Methode qui permet de retourner la variable d\textquotesingle{}instance chapters. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance chapters 
+\end{DoxyReturn}
+\Hypertarget{class_film_aea2dfc377d2867b9635c86283854dae6}\label{class_film_aea2dfc377d2867b9635c86283854dae6} 
+\index{Film@{Film}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily std\+::string Film\+::get\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Film"{}. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Film"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{Multimedia}}.
+
+\Hypertarget{class_film_a74c59f361a5457df3b6337c1744a24a8}\label{class_film_a74c59f361a5457df3b6337c1744a24a8} 
+\index{Film@{Film}!getNbChapter@{getNbChapter}}
+\index{getNbChapter@{getNbChapter}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getNbChapter()}{getNbChapter()}}
+{\footnotesize\ttfamily const int Film\+::get\+Nb\+Chapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter du nombre des chapitres Methode qui permet de retourner la valeure de la variable d\textquotesingle{}instance nb\+\_\+chapter. 
+
+\begin{DoxyReturn}{Returns}
+le nombre de chapitres nb\+\_\+chapter 
+\end{DoxyReturn}
+\Hypertarget{class_film_a2eb49b2c86d9457ac8dccbebed9faa47}\label{class_film_a2eb49b2c86d9457ac8dccbebed9faa47} 
+\index{Film@{Film}!print@{print}}
+\index{print@{print}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Film\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affiche les informations du \doxylink{class_film}{Film} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_film}{Film} Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_a2eb49b2c86d9457ac8dccbebed9faa47}{print()} de \doxylink{class_video}{Video}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{Multimedia}}.
+
+\Hypertarget{class_film_aa35a1cd4304fb2d6bd05481b5bd36202}\label{class_film_aa35a1cd4304fb2d6bd05481b5bd36202} 
+\index{Film@{Film}!read@{read}}
+\index{read@{read}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Film\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Désérialise un \doxylink{class_film}{Film} Méthode qui désérialise un objet \doxylink{class_film}{Film} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_aa35a1cd4304fb2d6bd05481b5bd36202}{read()} de \doxylink{class_video}{Video}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux d\textquotesingle{}entrée souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{Multimedia}}.
+
+\Hypertarget{class_film_aceb1d7e06405271ccd32ff0133a343ff}\label{class_film_aceb1d7e06405271ccd32ff0133a343ff} 
+\index{Film@{Film}!setChapters@{setChapters}}
+\index{setChapters@{setChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapters()}{setChapters()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapters (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{new\+Array,  }\item[{int}]{new\+Array\+Length }\end{DoxyParamCaption})}
+
+
+
+Remplace chapter par un nouveau tableau d\textquotesingle{}entiers Supprime le tableau chapters actuel avec la méthode \doxylink{class_film_a0c8a2b75af331fc5e5b23c207f1b1704}{delete\+\_\+chapters()} et le remplace par le tableau passé en paramètres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Array} & \+: nouveau tableau de chapitres \\
+\hline
+{\em new\+Array\+Length} & \+: longueur du nouveau tableau de chapitres \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_film_ab42358c662411b30209bf1ab08c3fea1}\label{class_film_ab42358c662411b30209bf1ab08c3fea1} 
+\index{Film@{Film}!setChapterValue@{setChapterValue}}
+\index{setChapterValue@{setChapterValue}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapterValue()}{setChapterValue()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapter\+Value (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Setter indexé de chapters Méthode qui permet de modifier la durée d\textquotesingle{}un chapitre à un index spécifié 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \+: index du chapitre à modifier \\
+\hline
+{\em value} & \+: nouvelle durée du chapitre à modifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_film_a79dfe7f3355d93a24e7d7f4627601d60}\label{class_film_a79dfe7f3355d93a24e7d7f4627601d60} 
+\index{Film@{Film}!write@{write}}
+\index{write@{write}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Film\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sérialise un \doxylink{class_film}{Film} Méthode qui sérialise un objet \doxylink{class_film}{Film} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_film_a79dfe7f3355d93a24e7d7f4627601d60}{write()} de \doxylink{class_video}{Video}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{Multimedia}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_film_a29a97f20d6ded769adf9ecc47158e24f}\label{class_film_a29a97f20d6ded769adf9ecc47158e24f} 
+\index{Film@{Film}!MultimediaManager@{MultimediaManager}}
+\index{MultimediaManager@{MultimediaManager}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{MultimediaManager}{MultimediaManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_multimedia_manager}{Multimedia\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+On souhaite que seule la classe \doxylink{class_multimedia_manager}{Multimedia\+Manager} puisse instancier \doxylink{class_video}{Video} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_film_8h}{Film.\+h}}\item 
+Film.\+cpp\end{DoxyCompactItemize}

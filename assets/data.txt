@@ -6,12 +6,21 @@ Film 1
 1
 2
 3
-Video
-Video 1
-.
-5
 Photo
 Photo 1
 ./assets/photo1.jpg
 1
 1
+Photo
+Photo 2
+.
+2
+2
+Video
+Video 1
+.
+5
+Video
+Video 2
+.
+6

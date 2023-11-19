@@ -1,0 +1,78 @@
+\doxysection{Photo.\+h}
+\hypertarget{_photo_8h_source}{}\label{_photo_8h_source}\mbox{\hyperlink{_photo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ Graph\_Photo}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ Graph\_Photo}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_multimedia_8h}{Multimedia.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_photo}{Photo}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ latitude;\ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ longitude;\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_photo_ae2db3274f96d4b0886e86e7ab38f8232}{Photo}}(\textcolor{keywordtype}{float}\ latitude,\ \textcolor{keywordtype}{float}\ longitude,\ std::string\ name,\ std::string\ fileName)\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(name,\ fileName),\ latitude\{latitude\},\ longitude\{longitude\}\ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_photo_a10ef03ede9235052eb9f7d5e950f85d3}{Photo}}()\ :\ \mbox{\hyperlink{class_multimedia}{Multimedia}}(),\ latitude\{0\},\ longitude\{0\}\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_photo_ab5210f7e59cebdd09bb470bd10455c8a}{getLatitude}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ latitude;\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_a36be9d8cbefb077a06fa7901aa8afe06}{setLatitude}}(\textcolor{keywordtype}{float}\ lat)\ \{\ latitude\ =\ lat;\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_photo_a5410155fe937b7ccc21d6335d8fc7e2c}{getLongitude}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ longitude;\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_ac39296e344ce8faab4c6412736f7e4a6}{setLongitude}}(\textcolor{keywordtype}{float}\ lon)\ \{\ longitude\ =\ lon;\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_a089cdcc933ac348cdd162780fc8f20d0}{print}}(std::ostream\ \&s)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{Multimedia::print}}(s);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{}Photo\ latitude\ :\ "{}}\ <<\ \mbox{\hyperlink{class_photo_ab5210f7e59cebdd09bb470bd10455c8a}{getLatitude}}()\ <<\ \textcolor{stringliteral}{"{}\ \ Photo\ longitude\ :\ "{}}\ <<\ \mbox{\hyperlink{class_photo_a5410155fe937b7ccc21d6335d8fc7e2c}{getLongitude}}()\ <<\ std::endl;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_a6b1cf4bd8aff9a446c5ee47c86a2a4c2}{play}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::string\ fileName\ =\ this-\/>\mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{getFileName}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::string\ systemArg\ =\ \textcolor{stringliteral}{"{}imagej\ "{}}\ +\ fileName\ +\ \textcolor{stringliteral}{"{}\ \&"{}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ system(systemArg.data());}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ \mbox{\hyperlink{class_photo_a3a4fab93e8b4c8e42bae96c9666f1987}{getClassName}}()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}Photo"{}});\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_a00895bfe174d28c66e5e25e92dd1088d}{write}}(std::ofstream\ \&f)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00107\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f.is\_open())}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{Multimedia::write}}(f);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ f\ <<\ latitude\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ longitude\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ d'ouvrir\ le\ fichier\ en\ écriture."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_photo_a35891869f72424a42fec4e259b5f18e0}{read}}(std::ifstream\ \&f)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00127\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f.is\_open())}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{Multimedia::read}}(f);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ lat,\ longi;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ getline(f,\ lat);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ getline(f,\ longi);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ GESTION\ d'ERREUR}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ latitude\ =\ std::stol(lat);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ longitude\ =\ std::stol(longi);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ :\ Impossible\ d'ouvrir\ le\ fichier\ en\ lecture."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

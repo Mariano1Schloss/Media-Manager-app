@@ -8,7 +8,7 @@ Multimedia::Multimedia(std::string name, std::string fileName)
 
 Multimedia::Multimedia()
 {
-    this->fileName = "/";
+    this->fileName = "./defaultLocation";
     this->name = "defaultName";
 }
 
@@ -39,5 +39,5 @@ void Multimedia::setFileName(std::string fn)
 
 void Multimedia::print(std::ostream &s) const
 {
-    s << this->getName() << " " << this->getFileName() << std::endl;
+    s << "Media name : " << this->getName() << "  Media File Name : " << this->getFileName() << std::endl;
 }

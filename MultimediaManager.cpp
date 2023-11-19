@@ -1,12 +1,5 @@
 #include "MultimediaManager.h"
 
-MultimediaManager::MultimediaManager(const std::map<std::string, std::shared_ptr<Multimedia>> &initialMultimedia,
-                                     const std::map<std::string, std::shared_ptr<Group>> &initialGroups)
-{
-    multimediaTable = initialMultimedia;
-    groupTable = initialGroups;
-}
-
 // Function to create a Video object and add it to multimediaTable
 std::shared_ptr<Video>
 MultimediaManager::createVideo(int duration, const std::string &name, const std::string &fileName)
@@ -96,17 +89,19 @@ void MultimediaManager::
 }
 
 // Fonction pour afficher et jouer un object multimédia par son nom
-void MultimediaManager::findAndPlayMultimedia(const std::string &name) const
+std::string MultimediaManager::findAndPlayMultimedia(const std::string &name) const
 {
     auto it = multimediaTable.find(name);
     if (it != multimediaTable.end())
     {
         std::shared_ptr<Multimedia> multimedia = it->second;
         multimedia->play();
+        return "Media was played";
     }
     else
     {
         std::cout << "Multimedia object with name " << name << " not found." << std::endl;
+        return "Multimedia not found";
     }
 }
 

@@ -1,0 +1,79 @@
+\doxysection{Multimedia\+Manager.\+h}
+\hypertarget{_multimedia_manager_8h_source}{}\label{_multimedia_manager_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ Graph\_MultimediaManager}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ Graph\_MultimediaManager}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_multimedia_8h}{Multimedia.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_film_8h}{Film.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_video_8h}{Video.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_photo_8h}{Photo.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_group_8h}{Group.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ std::map<std::string,\ std::shared\_ptr<Multimedia>>\ multimediaTable;\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::map<std::string,\ std::shared\_ptr<Group>>\ groupTable;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_multimedia_manager_a573be05631d25809239192b329b970ca}{MultimediaManager}}()\{\};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::shared\_ptr<Video>\ \mbox{\hyperlink{class_multimedia_manager_a530458dfdcab8ad0d5939dbc8d7aa9d3}{createVideo}}(\textcolor{keywordtype}{int}\ duration,\ \textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ std::string\ \&fileName);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::shared\_ptr<Photo>\ \mbox{\hyperlink{class_multimedia_manager_a8d388e04c7ca77bc6ec7317fd5c0d7c9}{createPhoto}}(\textcolor{keywordtype}{float}\ latitude,\ \textcolor{keywordtype}{float}\ longitude,\ std::string\ name,\ std::string\ fileName);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00066\ \ \ \ \ std::shared\_ptr<Film>\ \mbox{\hyperlink{class_multimedia_manager_ad9f51dbbe051ade3a17ff72ff22df0b2}{createFilm}}(\textcolor{keywordtype}{int}\ *array,\ \textcolor{keywordtype}{int}\ nb,\ \textcolor{keywordtype}{int}\ duration,\ std::string\ name,\ std::string\ fileName);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<Group>\ \mbox{\hyperlink{class_multimedia_manager_addfa84ba17c2db555d642135fcd44929}{createGroup}}(std::string\ groupName,\ \textcolor{keyword}{const}\ std::list<std::string>\ \&sourceList);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_a31bdfaf7d0db1d606ab858c5b183c5df}{findAndPrintMultimedia}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::ostream\ \&s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_ab34fcddc6093a4d6cee586b7b2c81f3a}{findAndPrintGroup}}(\textcolor{keyword}{const}\ std::string\ \&groupName,\ std::ostream\ \&s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \ \ \ \ std::string\ \mbox{\hyperlink{class_multimedia_manager_a9478fa6ed58cdf6a6c604861c1e3f304}{findAndPlayMultimedia}}(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_a4ed737969f82b04dffa88fca7630eaca}{deleteMultimedia}}(\textcolor{keyword}{const}\ std::string\ \&multimediaName);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_af07025e92df5fce0113d05fa532da551}{deleteGroup}}(\textcolor{keyword}{const}\ std::string\ \&groupName);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_afea52b9293b3f18f39f3b0f50ca7fd41}{removeFromAllGroups}}(\textcolor{keyword}{const}\ std::string\ \&multimediaName);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00127\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_multimedia_manager_a4ec27881dc2f1c95ed15dc20bd205a60}{findMediaStartingWithCharSeq}}(\textcolor{keyword}{const}\ std::string\ \&charSeq)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_multimedia_manager_a2ecfa531810582fa92f4bdcea3222893}{findMediaContainingCharSeq}}(\textcolor{keyword}{const}\ std::string\ \&charSeq)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_afdfa11104d67dee47d3b243ddfc685be}{read}}(std::ifstream\ \&f,\ std::string\ mediaName);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_manager_a1d7d87e718f26921694f546da5c4dba2}{write}}(std::ofstream\ \&f,\ std::string\ mediaName);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{/*Find\ media\ that\ are\ from\ a\ certain\ type}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ exemple\ of\ use\ :}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ std::list<std::string>\ matchingNames\ =\ findMediaByClassType<Video>();}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ I\ put\ the\ function\ in\ the\ header\ file\ because\ when\ defined\ in\ the\ .cpp\ file\ I}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ was\ getting\ an\ undefined\ error}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00157\ \ \ \ \ std::list<std::string>\ findMediaByClassType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ std::list<std::string>\ matchingNames;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&pair\ :\ multimediaTable)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Multimedia>\ \&media\ =\ pair.second;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(*media)\ ==\ \textcolor{keyword}{typeid}(T))}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchingNames.push\_back(pair.first);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matchingNames;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_multimedia_manager_ae902c345eb92a8c0716d53d884317d62}{findAllMedia}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

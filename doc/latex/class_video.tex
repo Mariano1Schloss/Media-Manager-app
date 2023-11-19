@@ -1,0 +1,223 @@
+\doxysection{Video Class Reference}
+\hypertarget{class_video}{}\label{class_video}\index{Video@{Video}}
+
+
+Classe representant une Vidéo.  
+
+
+
+
+{\ttfamily \#include $<$Video.\+h$>$}
+
+Inheritance diagram for Video\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_video}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2}{get\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Getter de la durée de la \doxylink{class_video}{Video} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a59b267094d61d47042569c076373fdc1}{set\+Duration}} (int dur)
+\begin{DoxyCompactList}\small\item\em Setter de la durée de \doxylink{class_video}{Video} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance duration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a1454b5730b096813188ce4b87c989224}{print}} (std\+::ostream \&s) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations de \doxylink{class_video}{Video} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_video}{Video} Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a1454b5730b096813188ce4b87c989224}{print()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a2d543313235b4d5181440b9a8f73e707}{play}} () override
+\begin{DoxyCompactList}\small\item\em Joue la vidéo sur le serveur Méthode qui permet de lire la vidéo sur le serveur à l\textquotesingle{}aide de mpv. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_video_af6881e638d70858b1b58f25ee6510884}{get\+Class\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Photo"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write}} (std\+::ofstream \&f) override
+\begin{DoxyCompactList}\small\item\em Sérialise une \doxylink{class_video}{Video} Méthode qui sérialise un objet \doxylink{class_video}{Video} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read}} (std\+::ifstream \&f) override
+\begin{DoxyCompactList}\small\item\em Désérialise une \doxylink{class_video}{Video} Méthode qui désérialise un objet \doxylink{class_video}{Video} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read()} de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_multimedia_a6105129da1041cc546f67fbd79f244f4}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du fichier du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}{set\+File\+Name}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du fichier du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_video_a728bbcb971449bdc91dd6f90c356f4d2}{Video}} (int duration, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe \doxylink{class_video}{Video}. Appelle d\textquotesingle{}abord le constructeur de \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+\Hypertarget{class_video_ab67336c2c5b6227a9635bc7dcd6af543}\label{class_video_ab67336c2c5b6227a9635bc7dcd6af543} 
+{\bfseries Video} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de base de la classe \doxylink{class_photo}{Photo} Appelle d\textquotesingle{}abord le constructeur de base de \doxylink{class_multimedia}{Multimedia} Initialise duration avec une valeur défaut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f}{Multimedia}} (std\+::string name, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia. \end{DoxyCompactList}\item 
+{\bfseries Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia Initialise name et filename avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_video_a29a97f20d6ded769adf9ecc47158e24f}{Multimedia\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe representant une Vidéo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_video_a728bbcb971449bdc91dd6f90c356f4d2}\label{class_video_a728bbcb971449bdc91dd6f90c356f4d2} 
+\index{Video@{Video}!Video@{Video}}
+\index{Video@{Video}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{Video()}{Video()}}
+{\footnotesize\ttfamily Video\+::\+Video (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructeur Constructeur de la classe \doxylink{class_video}{Video}. Appelle d\textquotesingle{}abord le constructeur de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: nom de la \doxylink{class_video}{Video} \\
+\hline
+{\em file\+Name} & \+: nom du fichier associé à la \doxylink{class_video}{Video} \\
+\hline
+{\em duration} & \+: durée de la \doxylink{class_video}{Video} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_video_af6881e638d70858b1b58f25ee6510884}\label{class_video_af6881e638d70858b1b58f25ee6510884} 
+\index{Video@{Video}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily std\+::string Video\+::get\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Photo"{}. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Photo"{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{Multimedia}}.
+
+\Hypertarget{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2}\label{class_video_a280bdfd76d8bd7f3ca90beb8eb6f14a2} 
+\index{Video@{Video}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily float Video\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter de la durée de la \doxylink{class_video}{Video} Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance duration. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance duration 
+\end{DoxyReturn}
+\Hypertarget{class_video_a2d543313235b4d5181440b9a8f73e707}\label{class_video_a2d543313235b4d5181440b9a8f73e707} 
+\index{Video@{Video}!play@{play}}
+\index{play@{play}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Video\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Joue la vidéo sur le serveur Méthode qui permet de lire la vidéo sur le serveur à l\textquotesingle{}aide de mpv. 
+
+
+
+Implements \mbox{\hyperlink{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18}{Multimedia}}.
+
+\Hypertarget{class_video_a1454b5730b096813188ce4b87c989224}\label{class_video_a1454b5730b096813188ce4b87c989224} 
+\index{Video@{Video}!print@{print}}
+\index{print@{print}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Video\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affiche les informations de \doxylink{class_video}{Video} Methode qui permet d\textquotesingle{}afficher les informations de \doxylink{class_video}{Video} Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a1454b5730b096813188ce4b87c989224}{print()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{Multimedia}}.
+
+\Hypertarget{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}\label{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e} 
+\index{Video@{Video}!read@{read}}
+\index{read@{read}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Video\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Désérialise une \doxylink{class_video}{Video} Méthode qui désérialise un objet \doxylink{class_video}{Video} en lisant sur le flux d\textquotesingle{}entrée f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{read()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux d\textquotesingle{}entrée souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{Multimedia}}.
+
+\Hypertarget{class_video_a59b267094d61d47042569c076373fdc1}\label{class_video_a59b267094d61d47042569c076373fdc1} 
+\index{Video@{Video}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}}
+{\footnotesize\ttfamily void Video\+::set\+Duration (\begin{DoxyParamCaption}\item[{int}]{dur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter de la durée de \doxylink{class_video}{Video} Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dur} & la nouvelle valeur de la variable d\textquotesingle{}instance duration \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_video_a23e65a321d362b7b1a11ec18676d1a90}\label{class_video_a23e65a321d362b7b1a11ec18676d1a90} 
+\index{Video@{Video}!write@{write}}
+\index{write@{write}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Video\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sérialise une \doxylink{class_video}{Video} Méthode qui sérialise un objet \doxylink{class_video}{Video} en écrivant sur le flux de sortie f Appelle d\textquotesingle{}abord la méthode \doxylink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{write()} de \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{Multimedia}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_video_a29a97f20d6ded769adf9ecc47158e24f}\label{class_video_a29a97f20d6ded769adf9ecc47158e24f} 
+\index{Video@{Video}!MultimediaManager@{MultimediaManager}}
+\index{MultimediaManager@{MultimediaManager}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{MultimediaManager}{MultimediaManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_multimedia_manager}{Multimedia\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+On souhaite que seule la classe \doxylink{class_multimedia_manager}{Multimedia\+Manager} puisse instancier \doxylink{class_video}{Video} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_video_8h}{Video.\+h}}\end{DoxyCompactItemize}

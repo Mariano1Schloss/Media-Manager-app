@@ -2,7 +2,7 @@
 // main.cpp
 // Created on 21/10/2018
 //
-#define MAIN
+//#define MAIN
 #ifdef MAIN
 #include "Photo.h"
 #include "Video.h"

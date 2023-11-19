@@ -1,0 +1,228 @@
+\doxysection{Multimedia Class Reference}
+\hypertarget{class_multimedia}{}\label{class_multimedia}\index{Multimedia@{Multimedia}}
+
+
+classe representant un fichier multimedia  
+
+
+
+
+{\ttfamily \#include $<$Multimedia.\+h$>$}
+
+Inheritance diagram for Multimedia\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_multimedia}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_multimedia_a6105129da1041cc546f67fbd79f244f4}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du fichier du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}{set\+File\+Name}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du fichier du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance filename. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Setter du nom du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{print}} (std\+::ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations du Multimédia Methode qui permet d\textquotesingle{}afficher les informations du Multimédia. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18}{play}} ()=0
+\begin{DoxyCompactList}\small\item\em Joue le Multimédia sur le serveur Methode virtuelles pure qui sera définie dans les classes filles permettant de jouer un Multimédia sur le serveur. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{get\+Class\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Multimedia"{}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{write}} (std\+::ofstream \&f)
+\begin{DoxyCompactList}\small\item\em Sérialise un \doxylink{class_multimedia}{Multimedia} Méthode qui sérialise un objet multimédia en écrivant sur le flux de sortie f. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{read}} (std\+::ifstream \&f)
+\begin{DoxyCompactList}\small\item\em Désérialise un \doxylink{class_multimedia}{Multimedia} Méthode qui désérialise un objet multimédia en lisant sur le flux d\textquotesingle{}entrée f. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f}{Multimedia}} (std\+::string name, std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia. \end{DoxyCompactList}\item 
+\Hypertarget{class_multimedia_a7106753d618df92d53b89328b7ecfe7f}\label{class_multimedia_a7106753d618df92d53b89328b7ecfe7f} 
+{\bfseries Multimedia} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe Multimédia Initialise name et filename avec des valeurs défauts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multimedia_a29a97f20d6ded769adf9ecc47158e24f}\label{class_multimedia_a29a97f20d6ded769adf9ecc47158e24f} 
+class {\bfseries Multimedia\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe representant un fichier multimedia 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f}\label{class_multimedia_aa6fb554dfa90216f8670b137a5065d9f} 
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\index{Multimedia@{Multimedia}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{Multimedia()}{Multimedia()}}
+{\footnotesize\ttfamily Multimedia\+::\+Multimedia (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructeur Constructeur de la classe Multimédia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: nom du multimédia \\
+\hline
+{\em filename} & \+: nom du fichier associé au multimédia \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}\label{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01} 
+\index{Multimedia@{Multimedia}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily virtual std\+::string Multimedia\+::get\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retourne le nom de la classe Methode qui permet de retourner le nom de la classe \+: "{}\+Multimedia"{}. 
+
+\begin{DoxyReturn}{Returns}
+"{}\+Multimedia"{} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_film_aea2dfc377d2867b9635c86283854dae6}{Film}}, \mbox{\hyperlink{class_photo_a3a4fab93e8b4c8e42bae96c9666f1987}{Photo}}, and \mbox{\hyperlink{class_video_af6881e638d70858b1b58f25ee6510884}{Video}}.
+
+\Hypertarget{class_multimedia_addfa5b830138cb98bfc6cde982daa473}\label{class_multimedia_addfa5b830138cb98bfc6cde982daa473} 
+\index{Multimedia@{Multimedia}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily std\+::string Multimedia\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter du nom du fichier du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance filename. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance filename 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_a6105129da1041cc546f67fbd79f244f4}\label{class_multimedia_a6105129da1041cc546f67fbd79f244f4} 
+\index{Multimedia@{Multimedia}!getName@{getName}}
+\index{getName@{getName}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Multimedia\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter du nom du Multimédia Methode qui permet de retourner la valeur de la variable d\textquotesingle{}instance name. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance name 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18}\label{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18} 
+\index{Multimedia@{Multimedia}!play@{play}}
+\index{play@{play}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Joue le Multimédia sur le serveur Methode virtuelles pure qui sera définie dans les classes filles permettant de jouer un Multimédia sur le serveur. 
+
+
+
+Implemented in \mbox{\hyperlink{class_photo_a6b1cf4bd8aff9a446c5ee47c86a2a4c2}{Photo}}, and \mbox{\hyperlink{class_video_a2d543313235b4d5181440b9a8f73e707}{Video}}.
+
+\Hypertarget{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}\label{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a} 
+\index{Multimedia@{Multimedia}!print@{print}}
+\index{print@{print}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Multimedia\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Affiche les informations du Multimédia Methode qui permet d\textquotesingle{}afficher les informations du Multimédia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_film_a2eb49b2c86d9457ac8dccbebed9faa47}{Film}}, \mbox{\hyperlink{class_photo_a089cdcc933ac348cdd162780fc8f20d0}{Photo}}, and \mbox{\hyperlink{class_video_a1454b5730b096813188ce4b87c989224}{Video}}.
+
+\Hypertarget{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}\label{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d} 
+\index{Multimedia@{Multimedia}!read@{read}}
+\index{read@{read}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Désérialise un \doxylink{class_multimedia}{Multimedia} Méthode qui désérialise un objet multimédia en lisant sur le flux d\textquotesingle{}entrée f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux d\textquotesingle{}entrée souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_film_aa35a1cd4304fb2d6bd05481b5bd36202}{Film}}, \mbox{\hyperlink{class_photo_a35891869f72424a42fec4e259b5f18e0}{Photo}}, and \mbox{\hyperlink{class_video_adfd725f8b9b40b3bbcf18d43a6ce425e}{Video}}.
+
+\Hypertarget{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}\label{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66} 
+\index{Multimedia@{Multimedia}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily void Multimedia\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Setter du nom du fichier du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & la nouvelle valeur de la variable d\textquotesingle{}instance filename \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}\label{class_multimedia_ae7587faa573715bcbaa786a0d83f4871} 
+\index{Multimedia@{Multimedia}!setName@{setName}}
+\index{setName@{setName}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Multimedia\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Setter du nom du Multimédia Methode qui permet de modifier la valeur de la variable d\textquotesingle{}instance name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & la nouvelle valeur de la variable d\textquotesingle{}instance name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_ae5782e904821958d7106638c1959b901}\label{class_multimedia_ae5782e904821958d7106638c1959b901} 
+\index{Multimedia@{Multimedia}!write@{write}}
+\index{write@{write}!Multimedia@{Multimedia}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual void Multimedia\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sérialise un \doxylink{class_multimedia}{Multimedia} Méthode qui sérialise un objet multimédia en écrivant sur le flux de sortie f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_film_a79dfe7f3355d93a24e7d7f4627601d60}{Film}}, \mbox{\hyperlink{class_photo_a00895bfe174d28c66e5e25e92dd1088d}{Photo}}, and \mbox{\hyperlink{class_video_a23e65a321d362b7b1a11ec18676d1a90}{Video}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_multimedia_8h}{Multimedia.\+h}}\item 
+Multimedia.\+cpp\end{DoxyCompactItemize}

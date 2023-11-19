@@ -1,0 +1,53 @@
+\doxysection{Multimedia.\+h}
+\hypertarget{_multimedia_8h_source}{}\label{_multimedia_8h_source}\mbox{\hyperlink{_multimedia_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ Graph\_Multimedia}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ Graph\_Multimedia}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multimedia}{Multimedia}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ name;\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ fileName;\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_multimedia_a7106753d618df92d53b89328b7ecfe7f}{Multimedia}}(std::string\ name,\ std::string\ filename);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_multimedia_a7106753d618df92d53b89328b7ecfe7f}{Multimedia}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multimedia_manager}{MultimediaManager}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_multimedia}{\string~Multimedia}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_multimedia_a6105129da1041cc546f67fbd79f244f4}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ \mbox{\hyperlink{class_multimedia_addfa5b830138cb98bfc6cde982daa473}{getFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_afe99fa89e80b70d588af7c1c5f05ff66}{setFileName}}(std::string\ fileName);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_ae7587faa573715bcbaa786a0d83f4871}{setName}}(std::string\ name);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_a2dd047ce1979213cc8c61e6bf3b8a87a}{print}}(std::ostream\ \&s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_a61ba185d65eafe7c5e9ab38052a4ff18}{play}}()\ =\ 0;\ \textcolor{comment}{//\ méthode\ abstraite}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{getClassName}}()\ \{\ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}Multimedia"{}});\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_ae5782e904821958d7106638c1959b901}{write}}(std::ofstream\ \&f)\ \{\ f\ <<\ \mbox{\hyperlink{class_multimedia_a3ff356a9b6b1e234b1d2f7b0ed534a01}{getClassName}}()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ name\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ fileName\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_multimedia_af2aaaab1d56f86af0b2f894d682c804d}{read}}(std::ifstream\ \&f)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ getline(f,\ name);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ getline(f,\ fileName);}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

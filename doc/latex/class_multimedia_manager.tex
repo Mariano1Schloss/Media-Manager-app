@@ -1,0 +1,333 @@
+\doxysection{Multimedia\+Manager Class Reference}
+\hypertarget{class_multimedia_manager}{}\label{class_multimedia_manager}\index{MultimediaManager@{MultimediaManager}}
+
+
+Classe representant un manager d\textquotesingle{}objets \doxylink{class_multimedia}{Multimedia}.  
+
+
+
+
+{\ttfamily \#include $<$Multimedia\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_multimedia_manager_a573be05631d25809239192b329b970ca}\label{class_multimedia_manager_a573be05631d25809239192b329b970ca} 
+{\bfseries Multimedia\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de base de la classe \doxylink{class_multimedia_manager}{Multimedia\+Manager}. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_video}{Video}} $>$ \mbox{\hyperlink{class_multimedia_manager_a530458dfdcab8ad0d5939dbc8d7aa9d3}{create\+Video}} (int duration, const std\+::string \&name, const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Créé une vidéo et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_video}{Video} et l\textquotesingle{}ajoute à multimedia\+Table. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_photo}{Photo}} $>$ \mbox{\hyperlink{class_multimedia_manager_a8d388e04c7ca77bc6ec7317fd5c0d7c9}{create\+Photo}} (float latitude, float longitude, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Créé une photo et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_photo}{Photo} et l\textquotesingle{}ajoute à multimedia\+Table. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ \mbox{\hyperlink{class_multimedia_manager_ad9f51dbbe051ade3a17ff72ff22df0b2}{create\+Film}} (int \texorpdfstring{$\ast$}{*}array, int nb, int duration, std\+::string name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Créé un \doxylink{class_film}{Film} et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_film}{Film} et l\textquotesingle{}ajoute à multimedia\+Table. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_group}{Group}} $>$ \mbox{\hyperlink{class_multimedia_manager_addfa84ba17c2db555d642135fcd44929}{create\+Group}} (std\+::string group\+Name, const std\+::list$<$ std\+::string $>$ \&source\+List)
+\begin{DoxyCompactList}\small\item\em Créé un Groupe et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_group}{Group} et l\textquotesingle{}ajoute à group\+Table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_a31bdfaf7d0db1d606ab858c5b183c5df}{find\+And\+Print\+Multimedia}} (const std\+::string \&name, std\+::ostream \&s) const
+\begin{DoxyCompactList}\small\item\em recherche et affiche un objet multimédia par son nom Méthode qui permet de rechercher et afficher un objet multimédia par son nom \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_ab34fcddc6093a4d6cee586b7b2c81f3a}{find\+And\+Print\+Group}} (const std\+::string \&group\+Name, std\+::ostream \&s) const
+\begin{DoxyCompactList}\small\item\em recherche et affiche un objet groupe par son nom Méthode qui permet de rechercher et afficher un objet groupe par son nom \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_multimedia_manager_a9478fa6ed58cdf6a6c604861c1e3f304}{find\+And\+Play\+Multimedia}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em recherche et joue un objet multimédia par son nom Méthode qui permet de rechercher et de jouer un objet multimédia par son nom \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_a4ed737969f82b04dffa88fca7630eaca}{delete\+Multimedia}} (const std\+::string \&multimedia\+Name)
+\begin{DoxyCompactList}\small\item\em recherche et supprime un objet multimédia par son nom Méthode qui permet de rechercher et supprimer un objet multimédia de multimedia\+Table par son nom \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_af07025e92df5fce0113d05fa532da551}{delete\+Group}} (const std\+::string \&group\+Name)
+\begin{DoxyCompactList}\small\item\em recherche et supprime un objet groupe par son nom Méthode qui permet de rechercher et supprimer un objet grouoe de group\+Table par son nom \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_afea52b9293b3f18f39f3b0f50ca7fd41}{remove\+From\+All\+Groups}} (const std\+::string \&multimedia\+Name)
+\begin{DoxyCompactList}\small\item\em retirer un objet multimédia des groupes qui le contiennent Méthode qui permet de retirer un objet multimédia des groupes qui le contiennent \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_multimedia_manager_a4ec27881dc2f1c95ed15dc20bd205a60}{find\+Media\+Starting\+With\+Char\+Seq}} (const std\+::string \&char\+Seq) const
+\begin{DoxyCompactList}\small\item\em trouve les noms de médias qui commencent par une chaîne de caractères donnée \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_multimedia_manager_a2ecfa531810582fa92f4bdcea3222893}{find\+Media\+Containing\+Char\+Seq}} (const std\+::string \&char\+Seq) const
+\begin{DoxyCompactList}\small\item\em trouve les noms de médias qui contiennent une chaîne de caractères donnée \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_afdfa11104d67dee47d3b243ddfc685be}{read}} (std\+::ifstream \&f, std\+::string media\+Name)
+\begin{DoxyCompactList}\small\item\em Appelle la méthode de lecture appropriée pour un objet \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multimedia_manager_a1d7d87e718f26921694f546da5c4dba2}{write}} (std\+::ofstream \&f, std\+::string media\+Name)
+\begin{DoxyCompactList}\small\item\em Appelle la méthode d\textquotesingle{}écriture appropriée pour un objet \doxylink{class_multimedia}{Multimedia}. \end{DoxyCompactList}\item 
+\Hypertarget{class_multimedia_manager_a048d97a1cd34891b7a191153d9628a8a}\label{class_multimedia_manager_a048d97a1cd34891b7a191153d9628a8a} 
+{\footnotesize template$<$typename T $>$ }\\std\+::list$<$ std\+::string $>$ {\bfseries find\+Media\+By\+Class\+Type} () const
+\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_multimedia_manager_ae902c345eb92a8c0716d53d884317d62}{find\+All\+Media}} () const
+\begin{DoxyCompactList}\small\item\em renvoie la liste de tous les noms des médias dans multimedia\+Table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe representant un manager d\textquotesingle{}objets \doxylink{class_multimedia}{Multimedia}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_multimedia_manager_ad9f51dbbe051ade3a17ff72ff22df0b2}\label{class_multimedia_manager_ad9f51dbbe051ade3a17ff72ff22df0b2} 
+\index{MultimediaManager@{MultimediaManager}!createFilm@{createFilm}}
+\index{createFilm@{createFilm}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{createFilm()}{createFilm()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_film}{Film}} $>$ Multimedia\+Manager\+::create\+Film (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{array,  }\item[{int}]{nb,  }\item[{int}]{duration,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Créé un \doxylink{class_film}{Film} et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_film}{Film} et l\textquotesingle{}ajoute à multimedia\+Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \+: tableau des durées des chapitres \\
+\hline
+{\em nb} & \+: nombre de chapitres \\
+\hline
+{\em duration} & \+: durée du film \\
+\hline
+{\em name} & \+: nom du film \\
+\hline
+{\em filename} & \+: nom du fichier associé à la photo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+smart pointer vers l\textquotesingle{}objet \doxylink{class_film}{Film} résultant 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_addfa84ba17c2db555d642135fcd44929}\label{class_multimedia_manager_addfa84ba17c2db555d642135fcd44929} 
+\index{MultimediaManager@{MultimediaManager}!createGroup@{createGroup}}
+\index{createGroup@{createGroup}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{createGroup()}{createGroup()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_group}{Group}} $>$ Multimedia\+Manager\+::create\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{group\+Name,  }\item[{const std\+::list$<$ std\+::string $>$ \&}]{source\+List }\end{DoxyParamCaption})}
+
+
+
+Créé un Groupe et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_group}{Group} et l\textquotesingle{}ajoute à group\+Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & \+: nom du groupe \\
+\hline
+{\em source\+List} & liste contenant tous les noms de médias du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+smart pointer vers l\textquotesingle{}objet groupe résultant 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_a8d388e04c7ca77bc6ec7317fd5c0d7c9}\label{class_multimedia_manager_a8d388e04c7ca77bc6ec7317fd5c0d7c9} 
+\index{MultimediaManager@{MultimediaManager}!createPhoto@{createPhoto}}
+\index{createPhoto@{createPhoto}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{createPhoto()}{createPhoto()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_photo}{Photo}} $>$ Multimedia\+Manager\+::create\+Photo (\begin{DoxyParamCaption}\item[{float}]{latitude,  }\item[{float}]{longitude,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Créé une photo et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_photo}{Photo} et l\textquotesingle{}ajoute à multimedia\+Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & \+: latitude de la photo \\
+\hline
+{\em longitude} & \+: longitude de la photo \\
+\hline
+{\em name} & \+: nom de la photo \\
+\hline
+{\em filename} & \+: nom du fichier associé à la photo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+smart pointer vers l\textquotesingle{}objet \doxylink{class_photo}{Photo} résultant 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_a530458dfdcab8ad0d5939dbc8d7aa9d3}\label{class_multimedia_manager_a530458dfdcab8ad0d5939dbc8d7aa9d3} 
+\index{MultimediaManager@{MultimediaManager}!createVideo@{createVideo}}
+\index{createVideo@{createVideo}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{createVideo()}{createVideo()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_video}{Video}} $>$ Multimedia\+Manager\+::create\+Video (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Créé une vidéo et l\textquotesingle{}ajoute Méthode qui permet de créer un objet \doxylink{class_video}{Video} et l\textquotesingle{}ajoute à multimedia\+Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & \+: durée de la vidéo \\
+\hline
+{\em name} & \+: nom de la vidéo \\
+\hline
+{\em filename} & \+: nom du fichier associé à la vidéo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+smart pointer vers l\textquotesingle{}objet \doxylink{class_video}{Video} résultant 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_af07025e92df5fce0113d05fa532da551}\label{class_multimedia_manager_af07025e92df5fce0113d05fa532da551} 
+\index{MultimediaManager@{MultimediaManager}!deleteGroup@{deleteGroup}}
+\index{deleteGroup@{deleteGroup}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{deleteGroup()}{deleteGroup()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::delete\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name }\end{DoxyParamCaption})}
+
+
+
+recherche et supprime un objet groupe par son nom Méthode qui permet de rechercher et supprimer un objet grouoe de group\+Table par son nom 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & \+: nom du grouoe \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_a4ed737969f82b04dffa88fca7630eaca}\label{class_multimedia_manager_a4ed737969f82b04dffa88fca7630eaca} 
+\index{MultimediaManager@{MultimediaManager}!deleteMultimedia@{deleteMultimedia}}
+\index{deleteMultimedia@{deleteMultimedia}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{deleteMultimedia()}{deleteMultimedia()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::delete\+Multimedia (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{multimedia\+Name }\end{DoxyParamCaption})}
+
+
+
+recherche et supprime un objet multimédia par son nom Méthode qui permet de rechercher et supprimer un objet multimédia de multimedia\+Table par son nom 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia\+Name} & \+: nom du média \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_ae902c345eb92a8c0716d53d884317d62}\label{class_multimedia_manager_ae902c345eb92a8c0716d53d884317d62} 
+\index{MultimediaManager@{MultimediaManager}!findAllMedia@{findAllMedia}}
+\index{findAllMedia@{findAllMedia}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findAllMedia()}{findAllMedia()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ Multimedia\+Manager\+::find\+All\+Media (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+renvoie la liste de tous les noms des médias dans multimedia\+Table 
+
+\begin{DoxyReturn}{Returns}
+liste de tous les noms des médias dans multimedia\+Table 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_a9478fa6ed58cdf6a6c604861c1e3f304}\label{class_multimedia_manager_a9478fa6ed58cdf6a6c604861c1e3f304} 
+\index{MultimediaManager@{MultimediaManager}!findAndPlayMultimedia@{findAndPlayMultimedia}}
+\index{findAndPlayMultimedia@{findAndPlayMultimedia}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findAndPlayMultimedia()}{findAndPlayMultimedia()}}
+{\footnotesize\ttfamily std\+::string Multimedia\+Manager\+::find\+And\+Play\+Multimedia (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+recherche et joue un objet multimédia par son nom Méthode qui permet de rechercher et de jouer un objet multimédia par son nom 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: nom du média \\
+\hline
+{\em s} & \+: flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_ab34fcddc6093a4d6cee586b7b2c81f3a}\label{class_multimedia_manager_ab34fcddc6093a4d6cee586b7b2c81f3a} 
+\index{MultimediaManager@{MultimediaManager}!findAndPrintGroup@{findAndPrintGroup}}
+\index{findAndPrintGroup@{findAndPrintGroup}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findAndPrintGroup()}{findAndPrintGroup()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::find\+And\+Print\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{group\+Name,  }\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+recherche et affiche un objet groupe par son nom Méthode qui permet de rechercher et afficher un objet groupe par son nom 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & \+: nom du groupe \\
+\hline
+{\em s} & \+: flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_a31bdfaf7d0db1d606ab858c5b183c5df}\label{class_multimedia_manager_a31bdfaf7d0db1d606ab858c5b183c5df} 
+\index{MultimediaManager@{MultimediaManager}!findAndPrintMultimedia@{findAndPrintMultimedia}}
+\index{findAndPrintMultimedia@{findAndPrintMultimedia}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findAndPrintMultimedia()}{findAndPrintMultimedia()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::find\+And\+Print\+Multimedia (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+recherche et affiche un objet multimédia par son nom Méthode qui permet de rechercher et afficher un objet multimédia par son nom 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: nom du média \\
+\hline
+{\em s} & \+: flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_a2ecfa531810582fa92f4bdcea3222893}\label{class_multimedia_manager_a2ecfa531810582fa92f4bdcea3222893} 
+\index{MultimediaManager@{MultimediaManager}!findMediaContainingCharSeq@{findMediaContainingCharSeq}}
+\index{findMediaContainingCharSeq@{findMediaContainingCharSeq}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findMediaContainingCharSeq()}{findMediaContainingCharSeq()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ Multimedia\+Manager\+::find\+Media\+Containing\+Char\+Seq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{char\+Seq }\end{DoxyParamCaption}) const}
+
+
+
+trouve les noms de médias qui contiennent une chaîne de caractères donnée 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char\+Seq} & \+: chaine de caractères à comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste des noms des médias contenant char\+Seq 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_a4ec27881dc2f1c95ed15dc20bd205a60}\label{class_multimedia_manager_a4ec27881dc2f1c95ed15dc20bd205a60} 
+\index{MultimediaManager@{MultimediaManager}!findMediaStartingWithCharSeq@{findMediaStartingWithCharSeq}}
+\index{findMediaStartingWithCharSeq@{findMediaStartingWithCharSeq}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{findMediaStartingWithCharSeq()}{findMediaStartingWithCharSeq()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ Multimedia\+Manager\+::find\+Media\+Starting\+With\+Char\+Seq (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{char\+Seq }\end{DoxyParamCaption}) const}
+
+
+
+trouve les noms de médias qui commencent par une chaîne de caractères donnée 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char\+Seq} & \+: chaine de caractères à comparer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste des noms des médias commençant par char\+Seq 
+\end{DoxyReturn}
+\Hypertarget{class_multimedia_manager_afdfa11104d67dee47d3b243ddfc685be}\label{class_multimedia_manager_afdfa11104d67dee47d3b243ddfc685be} 
+\index{MultimediaManager@{MultimediaManager}!read@{read}}
+\index{read@{read}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{f,  }\item[{std\+::string}]{media\+Name }\end{DoxyParamCaption})}
+
+
+
+Appelle la méthode de lecture appropriée pour un objet \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em media\+Name} & \+: nom du média à lire \\
+\hline
+{\em f} & \+: flux d\textquotesingle{}entrée souhaité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_afea52b9293b3f18f39f3b0f50ca7fd41}\label{class_multimedia_manager_afea52b9293b3f18f39f3b0f50ca7fd41} 
+\index{MultimediaManager@{MultimediaManager}!removeFromAllGroups@{removeFromAllGroups}}
+\index{removeFromAllGroups@{removeFromAllGroups}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{removeFromAllGroups()}{removeFromAllGroups()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::remove\+From\+All\+Groups (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{multimedia\+Name }\end{DoxyParamCaption})}
+
+
+
+retirer un objet multimédia des groupes qui le contiennent Méthode qui permet de retirer un objet multimédia des groupes qui le contiennent 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia\+Name} & \+: nom du média \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_multimedia_manager_a1d7d87e718f26921694f546da5c4dba2}\label{class_multimedia_manager_a1d7d87e718f26921694f546da5c4dba2} 
+\index{MultimediaManager@{MultimediaManager}!write@{write}}
+\index{write@{write}!MultimediaManager@{MultimediaManager}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Multimedia\+Manager\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{f,  }\item[{std\+::string}]{media\+Name }\end{DoxyParamCaption})}
+
+
+
+Appelle la méthode d\textquotesingle{}écriture appropriée pour un objet \doxylink{class_multimedia}{Multimedia}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em media\+Name} & \+: nom du média à écrire \\
+\hline
+{\em f} & \+: flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Multimedia\+Manager.\+h\item 
+Multimedia\+Manager.\+cpp\end{DoxyCompactItemize}

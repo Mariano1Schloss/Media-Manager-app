@@ -1,0 +1,105 @@
+\doxysection{Group Class Reference}
+\hypertarget{class_group}{}\label{class_group}\index{Group@{Group}}
+
+
+Classe representant un Groupe Hérite de std\+::list$<$std\+::shared\+\_\+ptr$<$\+Multimedia$>$$>$  
+
+
+
+
+{\ttfamily \#include $<$Group.\+h$>$}
+
+Inheritance diagram for Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_group}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_group_ac08eebc280f5dc0fb9309766ff6474ee}{Group}} (std\+::string group\+Name, const std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_multimedia}{Multimedia}} $>$ $>$ \&source\+List)
+\begin{DoxyCompactList}\small\item\em Constructeur Constructeur de la classe \doxylink{class_group}{Group}. Appelle d\textquotesingle{}abord le constructeur de std\+::list. \end{DoxyCompactList}\item 
+\Hypertarget{class_group_aed00a22ff227ee2657ae44a5cbcedf7c}\label{class_group_aed00a22ff227ee2657ae44a5cbcedf7c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Group} ()
+\begin{DoxyCompactList}\small\item\em Destructeur Signale quand un groupe est supprimé \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_group_a6769b2a4f5a903ff99b47fe041d5e159}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Getter du nom du groupe Methode qui permet de retourner le nom du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_a9b2a431f793beafb3e62bf85b536acc4}{print}} (std\+::ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations de tous les médias du groupe Methode qui permet d\textquotesingle{}invoquer la méthode \doxylink{class_group_a9b2a431f793beafb3e62bf85b536acc4}{print()} adaptée pour tous les médias du groupe \textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_group_a35822db326eb04eb773479e1e224be4c}{remove\+Multimedia\+By\+Name}} (const std\+::string \&multimedia\+Name)
+\begin{DoxyCompactList}\small\item\em Vérifie la présence et supprime du groupe Méthode pour vérifier si un groupe contient un objet multimédia par son nom et le retire de la liste le cas échéant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe representant un Groupe Hérite de std\+::list$<$std\+::shared\+\_\+ptr$<$\+Multimedia$>$$>$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_group_ac08eebc280f5dc0fb9309766ff6474ee}\label{class_group_ac08eebc280f5dc0fb9309766ff6474ee} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{group\+Name,  }\item[{const std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_multimedia}{Multimedia}} $>$ $>$ \&}]{source\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur Constructeur de la classe \doxylink{class_group}{Group}. Appelle d\textquotesingle{}abord le constructeur de std\+::list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & \+: nom du groupe \\
+\hline
+{\em source\+List} & \+: liste de smart pointers vers des objets \doxylink{class_multimedia}{Multimedia} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_group_a6769b2a4f5a903ff99b47fe041d5e159}\label{class_group_a6769b2a4f5a903ff99b47fe041d5e159} 
+\index{Group@{Group}!getName@{getName}}
+\index{getName@{getName}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string Group\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter du nom du groupe Methode qui permet de retourner le nom du groupe. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la variable d\textquotesingle{}instance name 
+\end{DoxyReturn}
+\Hypertarget{class_group_a9b2a431f793beafb3e62bf85b536acc4}\label{class_group_a9b2a431f793beafb3e62bf85b536acc4} 
+\index{Group@{Group}!print@{print}}
+\index{print@{print}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Group\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Affiche les informations de tous les médias du groupe Methode qui permet d\textquotesingle{}invoquer la méthode \doxylink{class_group_a9b2a431f793beafb3e62bf85b536acc4}{print()} adaptée pour tous les médias du groupe \textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: flux de sortie souhaité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_group_a35822db326eb04eb773479e1e224be4c}\label{class_group_a35822db326eb04eb773479e1e224be4c} 
+\index{Group@{Group}!removeMultimediaByName@{removeMultimediaByName}}
+\index{removeMultimediaByName@{removeMultimediaByName}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{removeMultimediaByName()}{removeMultimediaByName()}}
+{\footnotesize\ttfamily void Group\+::remove\+Multimedia\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{multimedia\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie la présence et supprime du groupe Méthode pour vérifier si un groupe contient un objet multimédia par son nom et le retire de la liste le cas échéant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia\+Name} & \+: nom du media à rechercher et supprimer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_group_8h}{Group.\+h}}\end{DoxyCompactItemize}
