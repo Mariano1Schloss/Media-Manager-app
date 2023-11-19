@@ -180,27 +180,64 @@ std::list<std::string> MultimediaManager::findAllMedia() const
 }
 
 // call read method of a media
-void MultimediaManager::read(std::ifstream &f, std::string mediaName){
+void MultimediaManager::read(std::ifstream &f, std::string mediaName)
+{
     auto it = multimediaTable.find(mediaName);
-        if (it != multimediaTable.end())
-        {
-            it->second->read(f);
-        }
-        else
-        {
-            std::cerr << "Media :" << mediaName << "not found \n";
-        }
+    if (it != multimediaTable.end())
+    {
+        it->second->read(f);
+    }
+    else
+    {
+        std::cerr << "Media :" << mediaName << "not found \n";
+    }
 }
 
 // call read method of a media
-void MultimediaManager::write(std::ofstream &f, std::string mediaName){
+void MultimediaManager::write(std::ofstream &f, std::string mediaName)
+{
     auto it = multimediaTable.find(mediaName);
-        if (it != multimediaTable.end())
+    if (it != multimediaTable.end())
+    {
+        it->second->write(f);
+    }
+    else
+    {
+        std::cerr << "Media :" << mediaName << "not found \n";
+    }
+}
+
+void MultimediaManager::multimediaFactory(std::ifstream &f)
+{
+    if (!f.is_open())
+    {
+        std::cerr << "Error opening file: " << std::endl;
+        return;
+    }
+
+    std::string line;
+    while (std::getline(f, line))
+    {
+        // Vérifie si la ligne est strictement égale à "Video"
+        if (line == "Video")
         {
-            it->second->write(f);
+            std::shared_ptr<Video> video(new Video());
+            video->read(f);
+            multimediaTable[video->getName()] = video;
         }
-        else
+        if (line == "Film")
         {
-            std::cerr << "Media :" << mediaName << "not found \n";
+            std::shared_ptr<Film> film(new Film());
+            film->read(f);
+            multimediaTable[film->getName()] = film;
         }
+        if (line == "Photo")
+        {
+            std::shared_ptr<Photo> photo(new Photo());
+            photo->read(f);
+            multimediaTable[photo->getName()] = photo;
+        }
+    }
+
+    f.close();
 }

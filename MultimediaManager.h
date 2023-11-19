@@ -173,6 +173,11 @@ public:
      *  \return liste de tous les noms des médias dans multimediaTable
      */
     std::list<std::string> findAllMedia() const;
+
+    /*!
+     *  \brief Désérialise les objets décrits dans un fichier et alimente la multimediaTable
+     */
+    void multimediaFactory(std::ifstream &f);
 };
 
 #endif

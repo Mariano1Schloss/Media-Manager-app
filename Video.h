@@ -123,7 +123,6 @@ public:
             getline(f, d);
             // TODO GESTION d'ERREUR
             duration = std::stoi(d);
-            f.close();
         }
         else
         {

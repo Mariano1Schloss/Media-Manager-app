@@ -173,19 +173,6 @@ std::string deleteMultimediaRequest(const std::string &name, MultimediaManager *
 
 int main(int argc, char *argv[])
 {
-  //  We need to have a multi-media manager
-
-  // create multimedia manager
-  MultimediaManager *manager = new MultimediaManager();
-  manager->createVideo(30, "Video 1", "./assets/video1.mp4");
-  manager->createVideo(30, "Video 2", "./assets/video2.mp4");
-  int array[] = {15, 7, 8};
-  manager->createFilm(array, 3, 30, "Film 1", "./assets/film1.mp4");
-  manager->createPhoto(640, 426, "Photo 1", "./assets/photo1.jpg");
-  manager->createPhoto(1280, 853, "Photo 2", "./assets/photo2.jpg");
-  manager->createGroup("Group 1", {"Video 1", "Film 1", "Photo 1"});
-  manager->createGroup("Group 2", {"Video 2", "Photo 2"});
-
   // create a method map
   std::map<std::string, std::function<std::string(const std::string &, MultimediaManager *)>> requestFunctionsMap;
   requestFunctionsMap["printRequest"] = printRequest;
@@ -197,6 +184,22 @@ int main(int argc, char *argv[])
   requestFunctionsMap["startWithCharSeqRequest"] = containCharSeqRequest;
   requestFunctionsMap["playRequest"] = playRequest;
 
+  /*###########################
+  Commenter/décommenter : création du manager "à la main", puis sérialisation dans data.txt
+  ###########################*/
+
+  //  We need to have a multi-media manager
+  // create multimedia manager
+  /*MultimediaManager *manager = new MultimediaManager();
+  manager->createVideo(30, "Video 1", "./assets/video1.mp4");
+  manager->createVideo(30, "Video 2", "./assets/video2.mp4");
+  int array[] = {15, 7, 8};
+  manager->createFilm(array, 3, 30, "Film 1", "./assets/film1.mp4");
+  manager->createPhoto(640, 426, "Photo 1", "./assets/photo1.jpg");
+  manager->createPhoto(1280, 853, "Photo 2", "./assets/photo2.jpg");
+  manager->createGroup("Group 1", {"Video 1", "Film 1", "Photo 1"});
+  manager->createGroup("Group 2", {"Video 2", "Photo 2"});
+
   // Serialize all the medias in the data.txt file
   std::ofstream outputFile("./assets/data.txt");
   std::list<std::string> medias = manager->findAllMedia();
@@ -204,7 +207,22 @@ int main(int argc, char *argv[])
   {
     manager->write(outputFile, mediaName);
   }
+  outputFile.close();*/
+/*###########################
+  Commenter/décommenter : création du manager depuis la désérialisation de data.txt
+  ###########################*/
+  MultimediaManager *manager = new MultimediaManager();
+  std::ifstream inputFile("./assets/data.txt");
+  manager->multimediaFactory(inputFile);
+  inputFile.close();
+  std::ofstream outputFile("./assets/data2.txt");
+  std::list<std::string> medias = manager->findAllMedia();
+  for (std::string mediaName : medias)
+  {
+    manager->write(outputFile, mediaName);
+  }
   outputFile.close();
+  /*###########################*/
 
   // cree le TCPServer
   auto *server =

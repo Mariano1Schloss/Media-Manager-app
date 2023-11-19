@@ -135,16 +135,51 @@ void Film::read(std::ifstream &f)
         getline(f, n);
         // TODO GESTION d'ERREUR
         nb_chapter = std::stoi(n);
+        chapters = new int[nb_chapter];
         for (int i = 0; i < nb_chapter; i++)
         {
             std::string c;
             getline(f, c);
             chapters[i] = std::stoi(c);
         }
-        f.close();
     }
     else
     {
         std::cerr << "Erreur : Impossible d'ouvrir le fichier en lecture." << std::endl;
     }
 };
+
+// Constructeur de copie profonde
+Film::Film(const Film &other) : Video(other.getDuration(), other.getName(), other.getFileName()), chapters(nullptr), nb_chapter(other.getNbChapter())
+{
+    if (other.chapters != nullptr)
+    {
+        chapters = new int[nb_chapter];
+        std::copy(other.getChapters(), other.getChapters() + nb_chapter, chapters);
+    }
+}
+
+// Opérateur d'assignation de copie profonde
+Film &Film::operator=(const Film &other)
+{
+    if (this != &other)
+    {
+        Video::operator=(other); // Appel de l'opérateur d'assignation de la classe de base
+
+        // Suppression de l'ancien tableau de chapters
+        delete[] chapters;
+
+        // Copie du nouveau tableau de chapters
+        nb_chapter = other.nb_chapter;
+        if (other.chapters != nullptr)
+        {
+            chapters = new int[nb_chapter];
+            std::copy(other.chapters, other.chapters + nb_chapter, chapters);
+        }
+        else
+        {
+            chapters = nullptr;
+        }
+    }
+    return *this;
+}

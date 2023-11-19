@@ -124,5 +124,11 @@ public:
      *  \param f: flux d'entrée souhaité
      */
     void read(std::ifstream &f) override;
+
+    // Constructeur de copie
+    Film(const Film &other);
+
+    // Opérateur d'assignation
+    Film &operator=(const Film &other);
 };
 #endif
